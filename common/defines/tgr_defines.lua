@@ -1,0 +1,4 @@
+-- THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+-- Расширенный диапазон кампании 2000-2040 для HoI4 1.16.10
+NDefines.NGame.START_DATE = "2000.1.1.12"
+NDefines.NGame.END_DATE = "2040.12.31.23"

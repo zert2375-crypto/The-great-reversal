@@ -1,0 +1,18 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for GER (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	GER_klaus_weber = {
+		name = GER_klaus_weber
+		portraits = {
+			civilian = { large = "GFX_portrait_GER_konrad_adenauer" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { staunch_constitutionalist }
+		}
+	}
+}

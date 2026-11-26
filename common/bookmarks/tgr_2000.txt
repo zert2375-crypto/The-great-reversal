@@ -1,0 +1,88 @@
+bookmarks = {
+	bookmark = {
+		name = "TGR_2000_NAME"
+		desc = "TGR_2000_DESC"
+		date = 2000.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "ARG"
+		default = yes
+
+		"ARG" = {
+			history = "ARG_TGR_2000_DESC"
+			ideology = democratic
+			ideas = {
+				tgr_berlin_nuclear_treaty
+				tgr_post_usa_collapse_shock
+				tgr_arg_unpopular_democrats
+			}
+		}
+		"SOV" = {
+			history = "SOV_TGR_2000_DESC"
+			ideology = neutrality
+			ideas = {
+				tgr_berlin_nuclear_treaty
+				tgr_sov_soyuz_autocracy
+				tgr_sov_army_purge_crisis
+			}
+		}
+		"JAP" = {
+			history = "JAP_TGR_2000_DESC"
+			ideology = democratic
+			ideas = {
+				tgr_berlin_nuclear_treaty
+				tgr_post_usa_collapse_shock
+				tgr_jap_2000_chaos
+			}
+		}
+		"SAG" = {
+			history = "SAG_TGR_2000_DESC"
+			ideology = neutrality
+			ideas = {
+				tgr_berlin_nuclear_treaty
+				tgr_sag_confederation_charter
+			}
+		}
+		"FRA" = {
+			history = "FRA_TGR_2000_DESC"
+			ideology = democratic
+			ideas = {
+				tgr_berlin_nuclear_treaty
+				tgr_post_usa_collapse_shock
+				tgr_fra_west_east_divide
+			}
+		}
+		"ENG" = {
+			history = "ENG_TGR_2000_DESC"
+			ideology = democratic
+			ideas = {
+				tgr_berlin_nuclear_treaty
+				tgr_post_usa_collapse_shock
+				tgr_eng_post_atlantic_crisis
+			}
+		}
+		"GER" = {
+			history = "GER_TGR_2000_DESC"
+			ideology = democratic
+			ideas = {
+				tgr_berlin_nuclear_treaty
+				tgr_eu_bloc_charter
+			}
+		}
+		"ITA" = {
+			minor = yes
+			history = "ITA_TGR_2000_DESC"
+			ideology = democratic
+			ideas = {
+				tgr_berlin_nuclear_treaty
+				tgr_eu_bloc_charter
+			}
+		}
+		--- = {
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+
+		effect = {
+			randomize_weather = 22345
+		}
+	}
+}

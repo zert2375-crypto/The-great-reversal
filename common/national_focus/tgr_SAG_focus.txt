@@ -1,0 +1,235 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# National Focus Tree: SAG — САГ (Соединённые Американские Государства)
+# HoI4 Compatibility: 1.16.10
+################################################################################
+
+focus_tree = {
+	id = tgr_sag_focus
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SAG
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 50 y = 2600 }
+
+	focus = {
+		id = SAG_confederation_act_2001
+		icon = GFX_goal_generic_national_unity
+		x = 5
+		y = 0
+		cost = 6
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.12
+			every_state = {
+				limit = { OR = { is_core_of = COL is_core_of = ECU is_core_of = VEN } }
+				add_core_of = SAG
+			}
+		}
+	}
+
+	focus = {
+		id = SAG_andean_oil_and_industry
+		icon = GFX_goal_generic_oil_refinery
+		x = 3
+		y = 1
+		cost = 7
+
+		prerequisite = { focus = SAG_confederation_act_2001 }
+		ai_will_do = {
+			factor = 85
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
+			}
+			add_resource = { type = oil amount = 18 state = 307 }
+		}
+	}
+
+	focus = {
+		id = SAG_amazon_corps_command
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 7
+		y = 1
+		cost = 6
+
+		prerequisite = { focus = SAG_confederation_act_2001 }
+		ai_will_do = {
+			factor = 85
+		}
+
+		completion_reward = {
+			army_experience = 45
+			add_manpower = 65000
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+			}
+		}
+	}
+
+	focus = {
+		id = SAG_sign_first_red_pact_2006
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 5
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SAG_andean_oil_and_industry }
+		prerequisite = { focus = SAG_amazon_corps_command }
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_opinion_modifier = { target = ARG modifier = large_increase }
+			create_wargoal = { type = annex_everything target = BRA }
+			add_state_claim = 495
+			add_state_claim = 497
+			add_ideas = tgr_sag_argen_dependency
+		}
+	}
+
+	focus = {
+		id = SAG_northern_brazil_campaign
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 5
+		y = 3
+		cost = 6
+
+		prerequisite = { focus = SAG_sign_first_red_pact_2006 }
+		ai_will_do = {
+			factor = 90
+		}
+
+		completion_reward = {
+			add_war_support = 0.10
+			army_experience = 40
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = SAG_argen_economic_loans
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 3
+		y = 4
+		cost = 6
+
+		prerequisite = { focus = SAG_northern_brazil_campaign }
+		mutually_exclusive = { focus = SAG_defy_buenos_aires }
+		ai_will_do = {
+			factor = 90
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = { type = infrastructure level = 3 instant_build = yes }
+			}
+			add_stability = 0.08
+			ARG = { add_political_power = 50 }
+		}
+	}
+
+	focus = {
+		id = SAG_defy_buenos_aires
+		icon = GFX_goal_generic_defence
+		x = 7
+		y = 4
+		cost = 7
+
+		prerequisite = { focus = SAG_northern_brazil_campaign }
+		mutually_exclusive = { focus = SAG_argen_economic_loans }
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			remove_ideas = tgr_sag_argen_dependency
+			add_war_support = 0.20
+			add_manpower = 120000
+		}
+	}
+
+	focus = {
+		id = SAG_union_with_argen_state_2010
+		icon = GFX_goal_generic_forceful_treaty
+		x = 3
+		y = 5
+		cost = 5
+
+		prerequisite = { focus = SAG_argen_economic_loans }
+		ai_will_do = {
+			factor = 95
+		}
+
+		completion_reward = {
+			set_cosmetic_tag = SAG_argen_protectorate
+			ARG = {
+				puppet = SAG
+				add_political_power = 100
+			}
+		}
+	}
+
+	focus = {
+		id = SAG_fortify_northern_andes
+		icon = GFX_goal_generic_fortify_city
+		x = 7
+		y = 5
+		cost = 7
+
+		prerequisite = { focus = SAG_defy_buenos_aires }
+		ai_will_do = {
+			factor = 50
+		}
+
+		completion_reward = {
+			306 = {
+				add_building_construction = { type = bunker level = 4 province = 10747 instant_build = yes }
+			}
+			add_doctrine_cost_reduction = {
+				name = SAG_andes_def
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SAG_caribbean_naval_program
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 5
+		y = 6
+		cost = 7
+
+		prerequisite = { focus = SAG_union_with_argen_state_2010 focus = SAG_fortify_northern_andes }
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			navy_experience = 40
+			random_owned_controlled_state = {
+				limit = { is_coastal = yes }
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = { type = dockyard level = 3 instant_build = yes }
+			}
+		}
+	}
+}

@@ -1,0 +1,77 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for ARG (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	ARG_democratic_president = {
+		name = ARG_democratic_president
+		portraits = {
+			civilian = { large = "GFX_portrait_south_america_generic_leader_1" }
+		}
+		country_leader = {
+			ideology = liberalism
+			expire = "2045.1.1.1"
+			traits = { inexperienced_imperialist }
+		}
+	}
+
+	ARG_akt_de_ruso = {
+		name = ARG_akt_de_ruso
+		portraits = {
+			civilian = { large = "GFX_portrait_ARG_agustin_pedro_justo" }
+		}
+		country_leader = {
+			ideology = rexism
+			expire = "2045.1.1.1"
+			traits = { dictator popular_figurehead }
+		}
+	}
+
+	ARG_celest_de_kuzo = {
+		name = ARG_celest_de_kuzo
+		portraits = {
+			civilian = { large = "GFX_portrait_ARG_arturo_rawson" }
+			army = { large = "GFX_portrait_ARG_arturo_rawson" }
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "2045.1.1.1"
+			traits = { war_industrialist army_chief_offensive_3 }
+		}
+		field_marshal = {
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+
+	ARG_rekt_de_avellenyo = {
+		name = ARG_rekt_de_avellenyo
+		portraits = {
+			civilian = { large = "GFX_portrait_ARG_roberto_maria_ortiz" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { smooth_talking_charmer silent_workhorse }
+		}
+	}
+
+	ARG_mateo_del_sur = {
+		name = ARG_mateo_del_sur
+		portraits = {
+			civilian = { large = "GFX_portrait_south_america_generic_land_3" }
+			army = { large = "GFX_portrait_south_america_generic_land_3" }
+		}
+		corps_commander = {
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+}

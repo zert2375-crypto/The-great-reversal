@@ -1,0 +1,460 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# National Focus Tree: JAP — Антарда (Япония)
+# HoI4 Compatibility: 1.16.10
+################################################################################
+
+focus_tree = {
+	id = tgr_antarda_focus
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = JAP
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 50 y = 2600 }
+
+	focus = {
+		id = JAP_chaos_of_2000
+		icon = GFX_goal_generic_political_pressure
+		x = 6
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_political_power = 75
+			add_popularity = { ideology = fascism popularity = 0.20 }
+			country_event = { id = tgr_jap.1 days = 3 }
+		}
+	}
+
+	focus = {
+		id = JAP_proclaim_antarda
+		icon = GFX_goal_support_fascism
+		x = 6
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = JAP_chaos_of_2000 }
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			set_cosmetic_tag = JAP_antarda
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			promote_character = JAP_kenji_takahashi
+			remove_ideas = {
+				tgr_jap_2000_chaos
+				tgr_post_usa_collapse_shock
+			}
+			add_ideas = tgr_jap_antarda_ascendant
+			add_stability = 0.25
+			country_event = { id = tgr_jap.2 days = 1 }
+		}
+	}
+
+	focus = {
+		id = JAP_adaptive_division_doctrine
+		icon = GFX_goal_generic_army_doctrines
+		x = 4
+		y = 2
+		cost = 6
+
+		prerequisite = { focus = JAP_proclaim_antarda }
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_ideas = tgr_jap_adaptive_divisions
+			load_oob = "JAP_antarda_adaptive"
+			army_experience = 75
+			add_doctrine_cost_reduction = {
+				name = JAP_adaptive_doc
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = JAP_military_industrial_forge
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 8
+		y = 2
+		cost = 7
+
+		prerequisite = { focus = JAP_proclaim_antarda }
+		ai_will_do = {
+			factor = 90
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_core_of = JAP }
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = JAP_elite_volunteers_uruguay_2001
+		icon = GFX_goal_generic_special_forces
+		x = 2
+		y = 3
+		cost = 5
+
+		prerequisite = { focus = JAP_adaptive_division_doctrine }
+		ai_will_do = {
+			factor = 95
+		}
+
+		completion_reward = {
+			add_ideas = tgr_jap_elite_volunteers
+			army_experience = 60
+			URG = {
+				add_opinion_modifier = { target = JAP modifier = large_increase }
+				add_manpower = 15000
+			}
+			country_event = { id = tgr_jap.3 days = 1 }
+		}
+	}
+
+	focus = {
+		id = JAP_korean_war_2001_2002
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 6
+		y = 3
+		cost = 6
+
+		prerequisite = { focus = JAP_adaptive_division_doctrine }
+		prerequisite = { focus = JAP_military_industrial_forge }
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_state_claim = 525
+			add_state_claim = 527
+			if = {
+				limit = { country_exists = KOR }
+				create_wargoal = { type = annex_everything target = KOR }
+			}
+			add_war_support = 0.10
+			army_experience = 45
+		}
+	}
+
+	focus = {
+		id = JAP_korean_industrial_base
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 6
+		y = 4
+		cost = 6
+
+		prerequisite = { focus = JAP_korean_war_2001_2002 }
+		ai_will_do = {
+			factor = 90
+		}
+
+		completion_reward = {
+			525 = {
+				add_building_construction = { type = infrastructure level = 2 instant_build = yes }
+				add_building_construction = { type = naval_base level = 3 province = 4056 instant_build = yes }
+			}
+			add_political_power = 80
+		}
+	}
+
+	focus = {
+		id = JAP_chinese_war_2003_2006
+		icon = GFX_goal_generic_major_war
+		x = 6
+		y = 5
+		cost = 7
+
+		prerequisite = { focus = JAP_korean_industrial_base }
+		bypass = {
+			CHI = { OR = { exists = no is_subject_of = JAP } }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = CHI
+			}
+			if = {
+				limit = { country_exists = PRC }
+				create_wargoal = { type = annex_everything target = PRC }
+			}
+			add_war_support = 0.12
+			country_event = { id = tgr_jap.4 days = 1 }
+		}
+	}
+
+	focus = {
+		id = JAP_assimilate_mainland_resources
+		icon = GFX_goal_generic_production
+		x = 8
+		y = 6
+		cost = 7
+
+		prerequisite = { focus = JAP_chinese_war_2003_2006 }
+		ai_will_do = {
+			factor = 85
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = JAP_siberian_adaptive_corps
+		icon = GFX_goal_generic_army_motorized
+		x = 4
+		y = 6
+		cost = 6
+
+		prerequisite = { focus = JAP_chinese_war_2003_2006 }
+		ai_will_do = {
+			factor = 95
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = JAP_winter_logistics
+				bonus = 1.5
+				uses = 2
+				category = logistics_tech
+			}
+			army_experience = 50
+		}
+	}
+
+	focus = {
+		id = JAP_russian_war_2006_2010
+		icon = GFX_goal_generic_attack_allies
+		x = 6
+		y = 7
+		cost = 7
+
+		prerequisite = { focus = JAP_siberian_adaptive_corps }
+		prerequisite = { focus = JAP_assimilate_mainland_resources }
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				type = take_state_focus
+				target = SOV
+				generator = { 408 409 560 561 563 }
+			}
+			add_state_claim = 408
+			add_state_claim = 409
+			add_state_claim = 560
+			add_war_support = 0.15
+		}
+	}
+
+	focus = {
+		id = JAP_subjugate_eastern_russia
+		icon = GFX_goal_generic_demand_territory
+		x = 6
+		y = 8
+		cost = 6
+
+		prerequisite = { focus = JAP_russian_war_2006_2010 }
+		ai_will_do = {
+			factor = 90
+		}
+
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.10
+			create_faction = "TGR_ANTARDA_SPHERE"
+		}
+	}
+
+	focus = {
+		id = JAP_pacific_fleet_expansion
+		icon = GFX_goal_generic_navy_carrier
+		x = 4
+		y = 9
+		cost = 7
+
+		prerequisite = { focus = JAP_subjugate_eastern_russia }
+		ai_will_do = {
+			factor = 90
+		}
+
+		completion_reward = {
+			navy_experience = 75
+			random_owned_controlled_state = {
+				limit = { is_coastal = yes }
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = JAP_pacific_carriers
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = JAP_air_supremacy_command
+		icon = GFX_goal_generic_air_fighter2
+		x = 8
+		y = 9
+		cost = 7
+
+		prerequisite = { focus = JAP_subjugate_eastern_russia }
+		ai_will_do = {
+			factor = 85
+		}
+
+		completion_reward = {
+			air_experience = 70
+			add_tech_bonus = {
+				name = JAP_air_supremacy
+				bonus = 1.25
+				uses = 2
+				category = air_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = JAP_strike_asian_minors_2018
+		icon = GFX_goal_generic_occupy_start_war
+		x = 6
+		y = 10
+		cost = 6
+
+		prerequisite = { focus = JAP_pacific_fleet_expansion }
+		prerequisite = { focus = JAP_air_supremacy_command }
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = SIA }
+			create_wargoal = { type = annex_everything target = INS }
+			create_wargoal = { type = annex_everything target = PHI }
+			add_named_threat = { threat = 25 name = JAP_ww3_threat }
+			country_event = { id = tgr_jap.5 days = 1 }
+			news_event = { id = tgr_news.5 days = 2 }
+		}
+	}
+
+	focus = {
+		id = JAP_fortress_home_islands
+		icon = GFX_goal_generic_fortify_city
+		x = 4
+		y = 11
+		cost = 6
+
+		prerequisite = { focus = JAP_strike_asian_minors_2018 }
+		ai_will_do = {
+			factor = 90
+		}
+
+		completion_reward = {
+			282 = {
+				add_building_construction = { type = coastal_bunker level = 4 province = 1182 instant_build = yes }
+				add_building_construction = { type = anti_air_building level = 3 instant_build = yes }
+			}
+			add_manpower = 400000
+		}
+	}
+
+	focus = {
+		id = JAP_final_adaptive_mobilization
+		icon = GFX_goal_generic_manpower_bonus
+		x = 8
+		y = 11
+		cost = 6
+
+		prerequisite = { focus = JAP_strike_asian_minors_2018 }
+		ai_will_do = {
+			factor = 85
+		}
+
+		completion_reward = {
+			add_war_support = 0.15
+			add_command_power = 60
+			army_experience = 80
+		}
+	}
+
+	focus = {
+		id = JAP_return_to_japan_status
+		icon = GFX_goal_support_democracy
+		x = 6
+		y = 12
+		cost = 5
+
+		prerequisite = { focus = JAP_fortress_home_islands focus = JAP_final_adaptive_mobilization }
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			set_cosmetic_tag = JAP_restored_japan
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			promote_character = JAP_ren_nakamura
+			remove_ideas = tgr_jap_antarda_ascendant
+			add_stability = 0.20
+		}
+	}
+}

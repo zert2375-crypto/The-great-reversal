@@ -1,0 +1,100 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# National Spirits: SAG, France, UK & European Union (No OESA budget GUI — pure HoI4 ideas)
+# HoI4 Compatibility: 1.16.10
+################################################################################
+
+ideas = {
+	country = {
+		tgr_sag_confederation_charter = {
+			picture = generic_constitutional_guarantees
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.1
+				local_resources_factor = 0.15
+				army_defence_factor = 0.08
+			}
+		}
+
+		tgr_sag_argen_dependency = {
+			picture = generic_foreign_capital
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				autonomy_gain = -0.5
+				consumer_goods_factor = 0.05
+				production_speed_infrastructure_factor = 0.12
+			}
+		}
+
+		tgr_fra_west_east_divide = {
+			picture = FRA_scw_intervention_nationalists_focus
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.16
+				production_speed_buildings_factor = -0.1
+				war_support_factor = -0.12
+			}
+		}
+
+		tgr_fra_primo_deal_spirit = {
+			picture = generic_oppression
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+				stability_factor = 0.08
+				autonomy_gain = -0.4
+			}
+		}
+
+		tgr_eng_post_atlantic_crisis = {
+			picture = eng_steady_as_she_goes
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.12
+				fascism_drift = 0.08
+				political_power_factor = -0.1
+			}
+		}
+
+		tgr_eng_armstrong_legacy = {
+			picture = generic_war_preparation
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.14
+				war_support_factor = 0.15
+				industrial_capacity_dockyard = 0.12
+			}
+		}
+
+		tgr_eu_bloc_charter = {
+			picture = generic_constitutional_guarantees
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.1
+				research_speed_factor = 0.06
+				political_power_gain = 0.15
+			}
+		}
+	}
+}

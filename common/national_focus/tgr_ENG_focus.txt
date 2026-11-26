@@ -1,0 +1,241 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# National Focus Tree: ENG — Великобритания (Революция Армстронга и Второй Красный пакт)
+# HoI4 Compatibility: 1.16.10
+################################################################################
+
+focus_tree = {
+	id = tgr_uk_focus
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ENG
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 50 y = 2600 }
+
+	focus = {
+		id = ENG_post_usa_collapse_reckoning
+		icon = GFX_goal_generic_neutrality_focus
+		x = 5
+		y = 0
+		cost = 6
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_political_power = 90
+			remove_ideas = tgr_post_usa_collapse_shock
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = ENG_rise_of_nilon_armstrong
+		icon = GFX_goal_support_fascism
+		x = 5
+		y = 1
+		cost = 6
+
+		prerequisite = { focus = ENG_post_usa_collapse_reckoning }
+		ai_will_do = {
+			factor = 95
+		}
+
+		completion_reward = {
+			set_cosmetic_tag = ENG_armstrong_directorate
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			promote_character = ENG_nilon_armstrong
+			remove_ideas = tgr_eng_post_atlantic_crisis
+			add_ideas = tgr_eng_armstrong_legacy
+			country_event = { id = tgr_eur.3 days = 1 }
+		}
+	}
+
+	focus = {
+		id = ENG_two_year_militarist_rearm
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 3
+		y = 2
+		cost = 6
+
+		prerequisite = { focus = ENG_rise_of_nilon_armstrong }
+		ai_will_do = {
+			factor = 90
+		}
+
+		completion_reward = {
+			126 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+				add_building_construction = { type = dockyard level = 2 instant_build = yes }
+			}
+			navy_experience = 50
+		}
+	}
+
+	focus = {
+		id = ENG_fall_of_armstrong_regime
+		icon = GFX_goal_support_democracy
+		x = 7
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = ENG_rise_of_nilon_armstrong }
+		ai_will_do = {
+			factor = 95
+		}
+
+		completion_reward = {
+			drop_cosmetic_tag = yes
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			promote_character = ENG_edward_vance
+			add_stability = 0.15
+			add_political_power = 80
+		}
+	}
+
+	focus = {
+		id = ENG_second_red_pact_benelux
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 5
+		y = 3
+		cost = 6
+
+		prerequisite = { focus = ENG_two_year_militarist_rearm }
+		prerequisite = { focus = ENG_fall_of_armstrong_regime }
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_state_claim = 6
+			add_state_claim = 7
+			add_state_claim = 35
+			add_state_claim = 8
+			create_wargoal = { type = annex_everything target = HOL }
+			create_wargoal = { type = annex_everything target = BEL }
+			country_event = { id = tgr_eur.4 days = 1 }
+		}
+	}
+
+	focus = {
+		id = ENG_integrate_benelux_ports
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 5
+		y = 4
+		cost = 7
+
+		prerequisite = { focus = ENG_second_red_pact_benelux }
+		ai_will_do = {
+			factor = 85
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { is_coastal = yes }
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = { type = dockyard level = 4 instant_build = yes }
+			}
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = ENG_armstrong_speech_tetyen_2026
+		icon = GFX_goal_generic_alliance
+		x = 5
+		y = 5
+		cost = 5
+
+		prerequisite = { focus = ENG_integrate_benelux_ports }
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			ARG = { country_event = { id = tgr_arg.10 days = 1 } }
+			add_war_support = 0.15
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = ENG_royal_navy_pacific_taskforce
+		icon = GFX_goal_generic_navy_battleship
+		x = 3
+		y = 6
+		cost = 7
+
+		prerequisite = { focus = ENG_armstrong_speech_tetyen_2026 }
+		ai_will_do = {
+			factor = 85
+		}
+
+		completion_reward = {
+			navy_experience = 80
+			add_doctrine_cost_reduction = {
+				name = ENG_pacific_royal_navy
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+			create_wargoal = { type = topple_government target = JAP }
+		}
+	}
+
+	focus = {
+		id = ENG_raf_long_range_strikes
+		icon = GFX_goal_generic_air_bomber
+		x = 7
+		y = 6
+		cost = 7
+
+		prerequisite = { focus = ENG_armstrong_speech_tetyen_2026 }
+		ai_will_do = {
+			factor = 80
+		}
+
+		completion_reward = {
+			air_experience = 75
+			add_tech_bonus = {
+				name = ENG_raf_bombers
+				bonus = 1.25
+				uses = 2
+				category = heavy_air
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_north_sea_commonwealth_2030
+		icon = GFX_goal_generic_production2
+		x = 5
+		y = 7
+		cost = 8
+
+		prerequisite = { focus = ENG_royal_navy_pacific_taskforce }
+		prerequisite = { focus = ENG_raf_long_range_strikes }
+		ai_will_do = {
+			factor = 80
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+			add_stability = 0.12
+			add_political_power = 100
+		}
+	}
+}

@@ -1,0 +1,53 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for FRA (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	FRA_laurent_moreau = {
+		name = FRA_laurent_moreau
+		portraits = {
+			civilian = { large = "GFX_portrait_FRA_edouard_daladier" }
+		}
+		country_leader = {
+			ideology = liberalism
+			expire = "2045.1.1.1"
+			traits = { silent_workhorse }
+		}
+	}
+
+	FRA_gaspar_primo = {
+		name = FRA_gaspar_primo
+		portraits = {
+			civilian = { large = "GFX_portrait_FRA_philippe_petain" }
+			army = { large = "GFX_portrait_FRA_philippe_petain" }
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "2045.1.1.1"
+			traits = { backroom_backstabber prince_of_terror }
+		}
+		field_marshal = {
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+
+	FRA_henri_valois = {
+		name = FRA_henri_valois
+		portraits = {
+			civilian = { large = "GFX_portrait_FRA_charles_de_gaulle" }
+			army = { large = "GFX_portrait_FRA_charles_de_gaulle" }
+		}
+		corps_commander = {
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+}

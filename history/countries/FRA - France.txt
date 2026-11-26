@@ -1,0 +1,45 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (2000.1.1)
+# History File: FRA — Французская Республика
+################################################################################
+
+capital = 16
+
+set_research_slots = 4
+set_stability = 0.44
+set_war_support = 0.35
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_engineers = 1
+	gw_artillery = 1
+	motorised_infantry = 1
+	fuel_silos = 1
+}
+
+add_ideas = {
+	tgr_berlin_nuclear_treaty
+	tgr_post_usa_collapse_shock
+	tgr_fra_west_east_divide
+}
+
+recruit_character = FRA_laurent_moreau
+recruit_character = FRA_gaspar_primo
+recruit_character = FRA_henri_valois
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1996.10.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 54
+	fascism = 14
+	communism = 6
+	neutrality = 26
+}

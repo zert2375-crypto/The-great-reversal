@@ -1,0 +1,231 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# National Focus Tree: FRA — Франция (Запад / Губернаторство Гаспара Примо)
+# HoI4 Compatibility: 1.16.10
+################################################################################
+
+focus_tree = {
+	id = tgr_france_focus
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = FRA
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 50 y = 2600 }
+
+	focus = {
+		id = FRA_two_frances_crisis
+		icon = GFX_goal_generic_neutrality_focus
+		x = 5
+		y = 0
+		cost = 6
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_political_power = 90
+			add_stability = -0.05
+			country_event = { id = tgr_eur.1 days = 5 }
+		}
+	}
+
+	focus = {
+		id = FRA_western_industrial_privilege
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 3
+		y = 1
+		cost = 7
+
+		prerequisite = { focus = FRA_two_frances_crisis }
+		ai_will_do = {
+			factor = 80
+		}
+
+		completion_reward = {
+			16 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
+			}
+			add_stability = -0.06
+		}
+	}
+
+	focus = {
+		id = FRA_primo_eastern_domain
+		icon = GFX_goal_generic_political_pressure
+		x = 7
+		y = 1
+		cost = 6
+
+		prerequisite = { focus = FRA_two_frances_crisis }
+		ai_will_do = {
+			factor = 95
+		}
+
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = { ideology = neutrality popularity = 0.22 }
+			army_experience = 35
+		}
+	}
+
+	focus = {
+		id = FRA_border_airport_incident_2011
+		icon = GFX_goal_generic_radar
+		x = 5
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = FRA_western_industrial_privilege }
+		prerequisite = { focus = FRA_primo_eastern_domain }
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_war_support = 0.12
+			air_experience = 40
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = FRA_primo_secret_deal_2013
+		icon = GFX_goal_generic_dangerous_deal
+		x = 7
+		y = 3
+		cost = 5
+
+		prerequisite = { focus = FRA_border_airport_incident_2011 }
+		mutually_exclusive = { focus = FRA_pyrenees_republican_stand }
+		ai_will_do = {
+			factor = 90
+		}
+
+		completion_reward = {
+			set_cosmetic_tag = FRA_primo_governorate
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			promote_character = FRA_gaspar_primo
+			remove_ideas = tgr_fra_west_east_divide
+			add_ideas = tgr_fra_primo_deal_spirit
+			country_event = { id = tgr_eur.2 days = 1 }
+		}
+	}
+
+	focus = {
+		id = FRA_pyrenees_republican_stand
+		icon = GFX_goal_generic_fortify_city
+		x = 3
+		y = 3
+		cost = 6
+
+		prerequisite = { focus = FRA_border_airport_incident_2011 }
+		mutually_exclusive = { focus = FRA_primo_secret_deal_2013 }
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			add_war_support = 0.18
+			31 = {
+				add_building_construction = { type = bunker level = 4 province = 9853 instant_build = yes }
+			}
+			add_manpower = 150000
+		}
+	}
+
+	focus = {
+		id = FRA_rebuild_eastern_departments
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 7
+		y = 4
+		cost = 7
+
+		prerequisite = { focus = FRA_primo_secret_deal_2013 }
+		ai_will_do = {
+			factor = 85
+		}
+
+		completion_reward = {
+			18 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+			}
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = FRA_argen_garrison_logistics
+		icon = GFX_goal_generic_build_airforce
+		x = 7
+		y = 5
+		cost = 6
+
+		prerequisite = { focus = FRA_rebuild_eastern_departments }
+		ai_will_do = {
+			factor = 90
+		}
+
+		completion_reward = {
+			28 = {
+				add_building_construction = { type = infrastructure level = 2 instant_build = yes }
+				add_building_construction = { type = air_base level = 3 instant_build = yes }
+			}
+			army_experience = 45
+		}
+	}
+
+	focus = {
+		id = FRA_join_european_union_bloc
+		icon = GFX_goal_generic_alliance
+		x = 3
+		y = 4
+		cost = 6
+
+		prerequisite = { focus = FRA_pyrenees_republican_stand }
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			GER = { add_to_faction = FRA }
+			add_stability = 0.10
+			remove_ideas = tgr_fra_west_east_divide
+		}
+	}
+
+	focus = {
+		id = FRA_modernize_republican_army
+		icon = GFX_goal_generic_army_tanks
+		x = 3
+		y = 5
+		cost = 7
+
+		prerequisite = { focus = FRA_join_european_union_bloc }
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = FRA_armor_rearm
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+			army_experience = 55
+		}
+	}
+}

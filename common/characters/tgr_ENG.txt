@@ -1,0 +1,50 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for ENG (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	ENG_arthur_pendleton = {
+		name = ENG_arthur_pendleton
+		portraits = {
+			civilian = { large = "GFX_portrait_ENG_neville_chamberlain" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { silent_workhorse }
+		}
+	}
+
+	ENG_nilon_armstrong = {
+		name = ENG_nilon_armstrong
+		portraits = {
+			civilian = { large = "GFX_portrait_ENG_oswald_mosley" }
+			army = { large = "GFX_portrait_ENG_oswald_mosley" }
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "2045.1.1.1"
+			traits = { popular_figurehead war_industrialist }
+		}
+		field_marshal = {
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+
+	ENG_edward_vance = {
+		name = ENG_edward_vance
+		portraits = {
+			civilian = { large = "GFX_portrait_ENG_winston_churchill" }
+		}
+		country_leader = {
+			ideology = liberalism
+			expire = "2045.1.1.1"
+			traits = { smooth_talking_charmer }
+		}
+	}
+}

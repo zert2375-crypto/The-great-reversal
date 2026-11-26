@@ -1,0 +1,114 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Events: Antarda / Japan
+# HoI4 Compatibility: 1.16.10
+################################################################################
+
+add_namespace = tgr_jap
+
+country_event = {
+	id = tgr_jap.1
+	title = tgr_jap.1.t
+	desc = tgr_jap.1.d
+	picture = GFX_report_event_japanese_officers
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = tgr_jap.1.a
+		ai_chance = { factor = 100 }
+		set_cosmetic_tag = JAP_antarda
+		promote_character = JAP_kenji_takahashi
+	}
+}
+
+country_event = {
+	id = tgr_jap.2
+	title = tgr_jap.2.t
+	desc = tgr_jap.2.d
+	picture = GFX_report_event_japanese_soldiers_02
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = tgr_jap.2.a
+		ai_chance = { factor = 100 }
+		army_experience = 40
+		add_war_support = 0.08
+	}
+}
+
+country_event = {
+	id = tgr_jap.3
+	title = tgr_jap.3.t
+	desc = tgr_jap.3.d
+	picture = GFX_report_event_japanese_parade
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = tgr_jap.3.a
+		ai_chance = { factor = 95 }
+		army_experience = 50
+		ARG = { add_ideas = tgr_arg_uruguay_humiliation }
+	}
+	option = {
+		name = tgr_jap.3.b
+		ai_chance = { factor = 5 }
+		add_political_power = 40
+	}
+}
+
+country_event = {
+	id = tgr_jap.4
+	title = tgr_jap.4.t
+	desc = tgr_jap.4.d
+	picture = GFX_report_event_japanese_transport_soldiers
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = tgr_jap.4.a
+		ai_chance = { factor = 100 }
+		add_war_support = 0.12
+		army_experience = 50
+	}
+}
+
+country_event = {
+	id = tgr_jap.5
+	title = tgr_jap.5.t
+	desc = tgr_jap.5.d
+	picture = GFX_report_event_japanese_soldiers_03
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = tgr_jap.5.a
+		ai_chance = { factor = 100 }
+		add_war_support = 0.15
+	}
+}
+
+country_event = {
+	id = tgr_jap.6
+	title = tgr_jap.6.t
+	desc = tgr_jap.6.d
+	picture = GFX_report_event_japanese_reply
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = tgr_jap.6.a
+		ai_chance = { factor = 100 }
+		set_cosmetic_tag = JAP_restored_japan
+		promote_character = JAP_ren_nakamura
+		remove_ideas = tgr_jap_antarda_ascendant
+	}
+}

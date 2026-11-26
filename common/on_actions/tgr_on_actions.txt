@@ -1,0 +1,15 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				if = {
+					limit = { NOT = { has_idea = tgr_berlin_nuclear_treaty } }
+					add_ideas = tgr_berlin_nuclear_treaty
+				}
+			}
+			ARG = {
+				news_event = { id = tgr_news.10 days = 2 }
+			}
+		}
+	}
+}

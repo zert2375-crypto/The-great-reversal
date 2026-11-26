@@ -1,0 +1,35 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# National Spirits: Global & Treaties (No OESA budget GUI — pure HoI4 ideas)
+# HoI4 Compatibility: 1.16.10
+################################################################################
+
+ideas = {
+	country = {
+		tgr_berlin_nuclear_treaty = {
+			picture = generic_constitutional_guarantees
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				nuclear_production_factor = -1
+				research_speed_factor = 0.02
+				justify_war_goal_time = -0.1
+			}
+		}
+
+		tgr_post_usa_collapse_shock = {
+			picture = great_depression
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.12
+				stability_factor = -0.1
+				political_power_gain = -0.15
+			}
+		}
+	}
+}

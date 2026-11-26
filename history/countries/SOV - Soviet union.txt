@@ -1,0 +1,50 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (2000.1.1)
+# History File: SOV — Российская Федерация
+################################################################################
+
+capital = 219
+
+set_research_slots = 4
+set_stability = 0.36
+set_war_support = 0.58
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_engineers = 1
+	gw_artillery = 1
+	motorised_infantry = 1
+	fuel_silos = 1
+}
+
+add_ideas = {
+	tgr_berlin_nuclear_treaty
+	tgr_sov_soyuz_autocracy
+	tgr_sov_army_purge_crisis
+	tgr_sov_berlin_circle_ties
+}
+
+recruit_character = SOV_alexei_menshikov
+recruit_character = SOV_mikhail_chernenko
+recruit_character = SOV_viktor_gromov
+recruit_character = SOV_sergei_volkov
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1996.10.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 14
+	fascism = 31
+	communism = 7
+	neutrality = 48
+}
+
+give_guarantee = MON
+give_guarantee = SIK

@@ -1,0 +1,142 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# National Spirits: Russia & Antarda (No OESA budget GUI — pure HoI4 ideas)
+# HoI4 Compatibility: 1.16.10
+################################################################################
+
+ideas = {
+	country = {
+		tgr_sov_soyuz_autocracy = {
+			picture = SOV_system_decentralization
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.3
+				stability_factor = -0.08
+				neutrality_drift = 0.08
+			}
+		}
+
+		tgr_sov_army_purge_crisis = {
+			picture = trotskyite_plot_purged
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_factor = -0.18
+				conscription_factor = -0.25
+				stability_factor = -0.15
+			}
+		}
+
+		tgr_sov_berlin_circle_ties = {
+			picture = generic_foreign_capital
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.25
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+
+		tgr_sov_chernenko_militarism = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.12
+				conscription = 0.025
+				production_speed_arms_factory_factor = 0.18
+				war_support_factor = 0.15
+			}
+		}
+
+		tgr_sov_celest_mission = {
+			picture = general_staff
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.12
+				planning_speed = 0.25
+				supply_consumption_factor = -0.1
+			}
+		}
+
+		tgr_sov_eastern_wound = {
+			picture = generic_intel_bonus
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.2
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+		}
+
+		tgr_jap_2000_chaos = {
+			picture = jap_interservice_rivalry_army_dominant
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.22
+				fascism_drift = 0.18
+				industrial_capacity_factory = -0.12
+			}
+		}
+
+		tgr_jap_antarda_ascendant = {
+			picture = state_shintoism
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.2
+				conscription = 0.03
+				justify_war_goal_time = -0.35
+				production_speed_arms_factory_factor = 0.15
+			}
+		}
+
+		tgr_jap_adaptive_divisions = {
+			picture = generic_acquire_tanks
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.14
+				army_defence_factor = 0.1
+				acclimatization_cold_climate_gain_factor = 0.3
+				acclimatization_hot_climate_gain_factor = 0.3
+				special_forces_cap = 0.15
+			}
+		}
+
+		tgr_jap_elite_volunteers = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				send_volunteer_size = 6
+				send_volunteers_tension = -0.5
+				air_volunteer_cap = 200
+			}
+		}
+	}
+}

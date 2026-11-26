@@ -1,0 +1,33 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for SAG (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	SAG_carlos_mendoza = {
+		name = SAG_carlos_mendoza
+		portraits = {
+			civilian = { large = "GFX_portrait_south_america_generic_leader_2" }
+		}
+		country_leader = {
+			ideology = oligarchism
+			expire = "2045.1.1.1"
+			traits = { smooth_talking_charmer }
+		}
+	}
+
+	SAG_luis_varona = {
+		name = SAG_luis_varona
+		portraits = {
+			civilian = { large = "GFX_portrait_south_america_generic_land_4" }
+			army = { large = "GFX_portrait_south_america_generic_land_4" }
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+}

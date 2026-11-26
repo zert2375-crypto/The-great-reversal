@@ -1,0 +1,2 @@
+# Custom Country Tags for The Great Reversal
+SAG = "countries/UnitedAmericanStates.txt"

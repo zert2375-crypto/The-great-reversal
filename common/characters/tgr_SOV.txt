@@ -1,0 +1,68 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for SOV (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	SOV_alexei_menshikov = {
+		name = SOV_alexei_menshikov
+		portraits = {
+			civilian = { large = "GFX_portrait_SOV_vyacheslav_molotov" }
+		}
+		country_leader = {
+			ideology = oligarchism
+			expire = "2045.1.1.1"
+			traits = { backroom_backstabber smooth_talking_charmer }
+		}
+	}
+
+	SOV_mikhail_chernenko = {
+		name = SOV_mikhail_chernenko
+		portraits = {
+			civilian = { large = "GFX_portrait_SOV_georgy_zhukov" }
+			army = { large = "GFX_portrait_SOV_georgy_zhukov" }
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "2045.1.1.1"
+			traits = { generallissimo strict_austerity_adherent }
+		}
+		field_marshal = {
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+
+	SOV_viktor_gromov = {
+		name = SOV_viktor_gromov
+		portraits = {
+			civilian = { large = "GFX_portrait_SOV_ivan_konev" }
+			army = { large = "GFX_portrait_SOV_ivan_konev" }
+		}
+		corps_commander = {
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+
+	SOV_sergei_volkov = {
+		name = SOV_sergei_volkov
+		portraits = {
+			civilian = { large = "GFX_portrait_SOV_konstantin_rokossovsky" }
+			army = { large = "GFX_portrait_SOV_konstantin_rokossovsky" }
+		}
+		corps_commander = {
+			skill = 4
+			attack_skill = 3
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+}

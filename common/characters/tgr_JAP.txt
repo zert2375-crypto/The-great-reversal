@@ -1,0 +1,65 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for JAP (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	JAP_crisis_cabinet = {
+		name = JAP_crisis_cabinet
+		portraits = {
+			civilian = { large = "GFX_portrait_JAP_fumimaro_konoe" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { inexperienced_imperialist }
+		}
+	}
+
+	JAP_kenji_takahashi = {
+		name = JAP_kenji_takahashi
+		portraits = {
+			civilian = { large = "GFX_portrait_JAP_hideki_tojo" }
+			army = { large = "GFX_portrait_JAP_hideki_tojo" }
+		}
+		country_leader = {
+			ideology = rexism
+			expire = "2045.1.1.1"
+			traits = { dictator warrior_code }
+		}
+		field_marshal = {
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 3
+		}
+	}
+
+	JAP_haruto_sato = {
+		name = JAP_haruto_sato
+		portraits = {
+			civilian = { large = "GFX_portrait_JAP_tomoyuki_yamashita" }
+			army = { large = "GFX_portrait_JAP_tomoyuki_yamashita" }
+		}
+		corps_commander = {
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+
+	JAP_ren_nakamura = {
+		name = JAP_ren_nakamura
+		portraits = {
+			civilian = { large = "GFX_portrait_JAP_mitsumasa_yonai" }
+		}
+		country_leader = {
+			ideology = liberalism
+			expire = "2045.1.1.1"
+			traits = { silent_workhorse }
+		}
+	}
+}

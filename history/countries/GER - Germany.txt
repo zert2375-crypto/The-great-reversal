@@ -1,0 +1,51 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (2000.1.1)
+# History File: GER — Федеративная Республика Германия
+################################################################################
+
+capital = 64
+
+set_research_slots = 4
+set_stability = 0.62
+set_war_support = 0.4
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_engineers = 1
+	gw_artillery = 1
+	motorised_infantry = 1
+	fuel_silos = 1
+}
+
+add_ideas = {
+	tgr_berlin_nuclear_treaty
+	tgr_eu_bloc_charter
+}
+
+recruit_character = GER_klaus_weber
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1996.10.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 68
+	fascism = 8
+	communism = 6
+	neutrality = 18
+}
+
+create_faction = "TGR_EUROPEAN_UNION_FACTION"
+add_to_faction = ITA
+add_to_faction = HUN
+add_to_faction = HOL
+add_to_faction = BEL
+add_to_faction = LUX
+add_to_faction = CZE
+add_to_faction = SLO
