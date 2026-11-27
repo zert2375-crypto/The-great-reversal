@@ -17,6 +17,9 @@ on_actions = {
 			if = {
 				limit = { date > 1999.1.1 }
 
+				# === Карта мира 2000 года: распад СССР и создание САГ ===
+				tgr_2000_world_map = yes
+
 				# === Принудительно выдаём модовые древа фокусов ===
 				# Ванильные древа FRA/SOV/JAP имеют тот же или больший вес,
 				# поэтому одного блока country в focus_tree недостаточно.
@@ -139,6 +142,62 @@ on_actions = {
 							recruit_character = SPA_rafael_morales
 							promote_character = SPA_rafael_morales
 						}
+					}
+				}
+			}
+		}
+	}
+
+	# ==========================================================================
+	# Итоги гражданской войны в России (2000–2001)
+	# ROOT — победитель, FROM — аннексированный проигравший.
+	# ==========================================================================
+	on_civil_war_end = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							has_country_flag = SOV_soyuz_side
+							has_country_flag = SOV_junta_side
+						}
+					}
+					FROM = { original_tag = SOV }
+				}
+
+				# Победа Военной Республики Черненко
+				if = {
+					limit = { ROOT = { has_country_flag = SOV_junta_side } }
+					ROOT = {
+						set_country_flag = SOV_civil_war_over
+						set_cosmetic_tag = SOV_russian_junta
+						set_politics = {
+							ruling_party = fascism
+							elections_allowed = no
+						}
+						promote_character = SOV_mikhail_chernenko
+						remove_ideas = {
+							tgr_sov_soyuz_autocracy
+							tgr_sov_army_purge_crisis
+							tgr_sov_berlin_circle_ties
+						}
+						add_ideas = tgr_sov_chernenko_militarism
+						load_focus_tree = { tree = tgr_russia_junta_postwar_focus keep_completed = no }
+					}
+				}
+				# Победа правительства Меньшикова
+				else = {
+					ROOT = {
+						set_country_flag = SOV_civil_war_over
+						drop_cosmetic_tag = yes
+						set_politics = {
+							ruling_party = neutrality
+							elections_allowed = no
+						}
+						promote_character = SOV_alexei_menshikov
+						remove_ideas = tgr_sov_army_purge_crisis
+						add_ideas = tgr_sov_fsb_prerogative
+						load_focus_tree = { tree = tgr_russia_soyuz_postwar_focus keep_completed = no }
 					}
 				}
 			}

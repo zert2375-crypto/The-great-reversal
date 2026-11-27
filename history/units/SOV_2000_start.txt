@@ -1,0 +1,383 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Starting Army: SOV — Российская Федерация, 1 января 2000 года
+# 48 дивизий: 36 пехотных и 12 мотострелковых, размещены от Балтики
+# до Дальнего Востока.
+# HoI4 Compatibility: 1.16.10
+################################################################################
+
+division_template = {
+	name = "Пехотная дивизия РФ"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		artillery = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Мотострелковая дивизия РФ"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		artillery = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	division = {
+		name = "1-я Мотострелковая дивизия"
+		location = 6380
+		division_template = "Мотострелковая дивизия РФ"
+		start_experience_factor = 0.30
+		start_equipment_factor = 0.85
+	}
+	division = {
+		name = "2-я Мотострелковая дивизия"
+		location = 6380
+		division_template = "Мотострелковая дивизия РФ"
+		start_experience_factor = 0.31
+		start_equipment_factor = 0.86
+	}
+	division = {
+		name = "1-я Пехотная дивизия"
+		location = 6380
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.25
+		start_equipment_factor = 0.80
+	}
+	division = {
+		name = "2-я Пехотная дивизия"
+		location = 6380
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.26
+		start_equipment_factor = 0.82
+	}
+	division = {
+		name = "3-я Пехотная дивизия"
+		location = 6380
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.27
+		start_equipment_factor = 0.84
+	}
+	division = {
+		name = "3-я Мотострелковая дивизия"
+		location = 79
+		division_template = "Мотострелковая дивизия РФ"
+		start_experience_factor = 0.32
+		start_equipment_factor = 0.87
+	}
+	division = {
+		name = "4-я Пехотная дивизия"
+		location = 79
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.28
+		start_equipment_factor = 0.78
+	}
+	division = {
+		name = "5-я Пехотная дивизия"
+		location = 79
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.24
+		start_equipment_factor = 0.80
+	}
+	division = {
+		name = "6-я Пехотная дивизия"
+		location = 79
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.25
+		start_equipment_factor = 0.82
+	}
+	division = {
+		name = "4-я Мотострелковая дивизия"
+		location = 498
+		division_template = "Мотострелковая дивизия РФ"
+		start_experience_factor = 0.33
+		start_equipment_factor = 0.84
+	}
+	division = {
+		name = "7-я Пехотная дивизия"
+		location = 498
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.26
+		start_equipment_factor = 0.84
+	}
+	division = {
+		name = "8-я Пехотная дивизия"
+		location = 498
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.27
+		start_equipment_factor = 0.78
+	}
+	division = {
+		name = "9-я Пехотная дивизия"
+		location = 498
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.28
+		start_equipment_factor = 0.80
+	}
+	division = {
+		name = "5-я Мотострелковая дивизия"
+		location = 585
+		division_template = "Мотострелковая дивизия РФ"
+		start_experience_factor = 0.29
+		start_equipment_factor = 0.85
+	}
+	division = {
+		name = "10-я Пехотная дивизия"
+		location = 585
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.24
+		start_equipment_factor = 0.82
+	}
+	division = {
+		name = "11-я Пехотная дивизия"
+		location = 585
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.25
+		start_equipment_factor = 0.84
+	}
+	division = {
+		name = "12-я Пехотная дивизия"
+		location = 228
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.26
+		start_equipment_factor = 0.78
+	}
+	division = {
+		name = "13-я Пехотная дивизия"
+		location = 228
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.27
+		start_equipment_factor = 0.80
+	}
+	division = {
+		name = "14-я Пехотная дивизия"
+		location = 228
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.28
+		start_equipment_factor = 0.82
+	}
+	division = {
+		name = "6-я Мотострелковая дивизия"
+		location = 298
+		division_template = "Мотострелковая дивизия РФ"
+		start_experience_factor = 0.30
+		start_equipment_factor = 0.86
+	}
+	division = {
+		name = "15-я Пехотная дивизия"
+		location = 298
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.24
+		start_equipment_factor = 0.84
+	}
+	division = {
+		name = "16-я Пехотная дивизия"
+		location = 298
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.25
+		start_equipment_factor = 0.78
+	}
+	division = {
+		name = "7-я Мотострелковая дивизия"
+		location = 307
+		division_template = "Мотострелковая дивизия РФ"
+		start_experience_factor = 0.31
+		start_equipment_factor = 0.87
+	}
+	division = {
+		name = "17-я Пехотная дивизия"
+		location = 307
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.26
+		start_equipment_factor = 0.80
+	}
+	division = {
+		name = "18-я Пехотная дивизия"
+		location = 307
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.27
+		start_equipment_factor = 0.82
+	}
+	division = {
+		name = "19-я Пехотная дивизия"
+		location = 307
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.28
+		start_equipment_factor = 0.84
+	}
+	division = {
+		name = "8-я Мотострелковая дивизия"
+		location = 1233
+		division_template = "Мотострелковая дивизия РФ"
+		start_experience_factor = 0.32
+		start_equipment_factor = 0.84
+	}
+	division = {
+		name = "20-я Пехотная дивизия"
+		location = 1233
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.24
+		start_equipment_factor = 0.78
+	}
+	division = {
+		name = "21-я Пехотная дивизия"
+		location = 1233
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.25
+		start_equipment_factor = 0.80
+	}
+	division = {
+		name = "9-я Мотострелковая дивизия"
+		location = 1733
+		division_template = "Мотострелковая дивизия РФ"
+		start_experience_factor = 0.33
+		start_equipment_factor = 0.85
+	}
+	division = {
+		name = "22-я Пехотная дивизия"
+		location = 1733
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.26
+		start_equipment_factor = 0.82
+	}
+	division = {
+		name = "23-я Пехотная дивизия"
+		location = 1733
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.27
+		start_equipment_factor = 0.84
+	}
+	division = {
+		name = "24-я Пехотная дивизия"
+		location = 1733
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.28
+		start_equipment_factor = 0.78
+	}
+	division = {
+		name = "10-я Мотострелковая дивизия"
+		location = 1709
+		division_template = "Мотострелковая дивизия РФ"
+		start_experience_factor = 0.29
+		start_equipment_factor = 0.86
+	}
+	division = {
+		name = "25-я Пехотная дивизия"
+		location = 1709
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.24
+		start_equipment_factor = 0.80
+	}
+	division = {
+		name = "26-я Пехотная дивизия"
+		location = 1709
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.25
+		start_equipment_factor = 0.82
+	}
+	division = {
+		name = "27-я Пехотная дивизия"
+		location = 1777
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.26
+		start_equipment_factor = 0.84
+	}
+	division = {
+		name = "28-я Пехотная дивизия"
+		location = 1777
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.27
+		start_equipment_factor = 0.78
+	}
+	division = {
+		name = "29-я Пехотная дивизия"
+		location = 1777
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.28
+		start_equipment_factor = 0.80
+	}
+	division = {
+		name = "30-я Пехотная дивизия"
+		location = 1707
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.24
+		start_equipment_factor = 0.82
+	}
+	division = {
+		name = "31-я Пехотная дивизия"
+		location = 1707
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.25
+		start_equipment_factor = 0.84
+	}
+	division = {
+		name = "32-я Пехотная дивизия"
+		location = 1707
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.26
+		start_equipment_factor = 0.78
+	}
+	division = {
+		name = "11-я Мотострелковая дивизия"
+		location = 725
+		division_template = "Мотострелковая дивизия РФ"
+		start_experience_factor = 0.30
+		start_equipment_factor = 0.87
+	}
+	division = {
+		name = "33-я Пехотная дивизия"
+		location = 725
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.27
+		start_equipment_factor = 0.80
+	}
+	division = {
+		name = "34-я Пехотная дивизия"
+		location = 725
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.28
+		start_equipment_factor = 0.82
+	}
+	division = {
+		name = "12-я Мотострелковая дивизия"
+		location = 664
+		division_template = "Мотострелковая дивизия РФ"
+		start_experience_factor = 0.31
+		start_equipment_factor = 0.84
+	}
+	division = {
+		name = "35-я Пехотная дивизия"
+		location = 664
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.24
+		start_equipment_factor = 0.84
+	}
+	division = {
+		name = "36-я Пехотная дивизия"
+		location = 664
+		division_template = "Пехотная дивизия РФ"
+		start_experience_factor = 0.25
+		start_equipment_factor = 0.78
+	}
+}

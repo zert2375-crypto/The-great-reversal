@@ -5,6 +5,8 @@
 
 capital = 219
 
+set_oob = "SOV_2000_start"
+
 set_research_slots = 4
 set_stability = 0.36
 set_war_support = 0.58

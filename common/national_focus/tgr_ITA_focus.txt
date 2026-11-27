@@ -42,7 +42,6 @@ focus_tree = {
 			add_ideas = tgr_ita_berlin_circle
 		}
 	}
-
 	focus = {
 		id = ITA_circle_of_friends_1989
 		icon = GFX_goal_generic_improve_relations
@@ -65,7 +64,6 @@ focus_tree = {
 			add_opinion_modifier = { target = ENG modifier = medium_increase }
 		}
 	}
-
 	focus = {
 		id = ITA_eu_charter_1993
 		icon = GFX_goal_generic_alliance
@@ -96,7 +94,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_post_usa_collapse_1990
 		icon = GFX_goal_generic_construct_civ_factory
@@ -115,7 +112,6 @@ focus_tree = {
 			add_political_power = 60
 		}
 	}
-
 	focus = {
 		id = ITA_second_republic_recovery
 		icon = GFX_goal_generic_construct_civ_factory
@@ -141,7 +137,6 @@ focus_tree = {
 			add_stability = 0.05
 		}
 	}
-
 	focus = {
 		id = ITA_army_reform_1995
 		icon = GFX_goal_generic_army_doctrines
@@ -165,7 +160,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_mediterranean_market_1995
 		icon = GFX_goal_generic_production2
@@ -192,11 +186,6 @@ focus_tree = {
 			}
 		}
 	}
-
-	# ==========================================================================
-	# 2000-Е: ПРАВИТЕЛЬСТВО ЛОРЕНЦО КОНТИ
-	# ==========================================================================
-
 	focus = {
 		id = ITA_conti_government_2000
 		icon = GFX_goal_generic_national_unity
@@ -215,7 +204,6 @@ focus_tree = {
 			add_stability = 0.05
 		}
 	}
-
 	focus = {
 		id = ITA_northern_industry_2000s
 		icon = GFX_goal_generic_construct_civ_factory
@@ -241,7 +229,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_small_firms_2000s
 		icon = GFX_goal_generic_production
@@ -264,7 +251,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_tourism_infrastructure_2000s
 		icon = GFX_goal_generic_construct_infrastructure
@@ -289,7 +275,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_southern_development_2000s
 		icon = GFX_goal_generic_construction2
@@ -314,7 +299,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_balkans_influence_2000s
 		icon = GFX_goal_generic_improve_relations
@@ -338,7 +322,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_north_africa_relations_2000s
 		icon = GFX_goal_generic_major_alliance
@@ -362,7 +345,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_navy_modernization_2000s
 		icon = GFX_goal_generic_construct_naval_dockyard
@@ -389,7 +371,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_air_force_modernization_2000s
 		icon = GFX_goal_generic_build_airforce
@@ -414,7 +395,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = ITA_servizio_2000s
 		icon = GFX_goal_generic_intelligence_exchange
@@ -437,712 +417,496 @@ focus_tree = {
 			}
 		}
 	}
-
-	# ==========================================================================
-	# 2010–2013: СРЕДИЗЕМНОМОРЬЕ НА ПОРОГЕ ВОЙНЫ
-	# ==========================================================================
-
 	focus = {
-		id = ITA_iberian_solidarity_2010
-		icon = GFX_goal_generic_improve_relations
-		x = 8
-		y = 7
-		cost = 5
-
-		prerequisite = { focus = ITA_balkans_influence_2000s }
+		id = ITA_path_sovereign
+		icon = GFX_goal_generic_defence
+		x = 30
+		y = 0
+		cost = 4
+		available = {
+			OR = {
+				ARG = { has_country_flag = ARG_akt_path }
+				ARG = { has_country_flag = ARG_democratic_path }
+			}
+		}
+		mutually_exclusive = { focus = ITA_path_cooperation }
 		ai_will_do = {
-			factor = 75
+			factor = 50
+			modifier = { factor = 2.0 ARG = { has_country_flag = ARG_akt_path } }
+			modifier = { factor = 0.3 ARG = { has_country_flag = ARG_democratic_path } }
 		}
 
 		completion_reward = {
-			add_political_power = 30
-			POR = { add_opinion_modifier = { target = ITA modifier = medium_increase } }
-			add_opinion_modifier = { target = POR modifier = medium_increase }
-		}
-	}
-
-	focus = {
-		id = ITA_spanish_crisis_2011
-		icon = GFX_goal_generic_political_pressure
-		x = 10
-		y = 7
-		cost = 6
-
-		prerequisite = { focus = ITA_iberian_solidarity_2010 }
-		ai_will_do = {
-			factor = 85
-		}
-
-		completion_reward = {
-			add_stability = -0.03
+			add_stability = 0.05
 			add_war_support = 0.05
-			SPR = { add_opinion_modifier = { target = ITA modifier = medium_increase } }
+			add_political_power = 50
 		}
 	}
 
 	focus = {
-		id = ITA_french_deal_2013
-		icon = GFX_goal_generic_dangerous_deal
-		x = 12
-		y = 7
-		cost = 6
-
-		prerequisite = { focus = ITA_spanish_crisis_2011 }
+		id = ITA_path_cooperation
+		icon = GFX_goal_generic_improve_relations
+		x = 36
+		y = 0
+		cost = 4
+		available = {
+			OR = {
+				ARG = { has_country_flag = ARG_akt_path }
+				ARG = { has_country_flag = ARG_democratic_path }
+			}
+		}
+		mutually_exclusive = { focus = ITA_path_sovereign }
 		ai_will_do = {
-			factor = 90
+			factor = 50
+			modifier = { factor = 2.0 ARG = { has_country_flag = ARG_democratic_path } }
+			modifier = { factor = 0.3 ARG = { has_country_flag = ARG_akt_path } }
 		}
 
 		completion_reward = {
 			add_political_power = 60
-			FRA = { add_opinion_modifier = { target = ITA modifier = medium_increase } }
-			add_opinion_modifier = { target = GER modifier = medium_increase }
-		}
-	}
-
-	focus = {
-		id = ITA_watch_argentina_2012
-		icon = GFX_goal_generic_intelligence_exchange
-		x = 22
-		y = 7
-		cost = 6
-
-		prerequisite = { focus = ITA_servizio_2000s }
-		ai_will_do = {
-			factor = 85
-		}
-
-		completion_reward = {
-			add_ideas = tgr_ita_argentina_watch
-			add_intel = {
-				target = ARG
-				civilian_intel = 20
-				army_intel = 25
-				airforce_intel = 15
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_defense_industry_2012
-		icon = GFX_goal_generic_construct_mil_factory
-		x = 4
-		y = 7
-		cost = 7
-
-		prerequisite = { focus = ITA_southern_development_2000s }
-		ai_will_do = {
-			factor = 80
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = { is_core_of = ITA }
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-			}
-			add_tech_bonus = {
-				name = ITA_defense_industry_tech
-				bonus = 0.75
-				uses = 2
-				category = industry
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_alpine_fortifications_2013
-		icon = GFX_goal_generic_fortify_city
-		x = 16
-		y = 8
-		cost = 6
-
-		prerequisite = { focus = ITA_air_force_modernization_2000s }
-		ai_will_do = {
-			factor = 80
-		}
-
-		completion_reward = {
-			add_manpower = 50000
-			army_experience = 35
-			add_command_power = 25
-		}
-	}
-
-	# ==========================================================================
-	# 2014–2016: ПЕРЕВООРУЖЕНИЕ И ТЕХНОЛОГИЧЕСКАЯ ГОНКА
-	# ==========================================================================
-
-	focus = {
-		id = ITA_rearmament_2014
-		icon = GFX_goal_generic_secret_weapon
-		x = 12
-		y = 9
-		cost = 10
-
-		prerequisite = { focus = ITA_french_deal_2013 }
-		prerequisite = { focus = ITA_watch_argentina_2012 }
-		ai_will_do = {
-			factor = 100
-		}
-
-		completion_reward = {
-			add_ideas = tgr_ita_rearmament
-			add_research_slot = 1
-			add_tech_bonus = {
-				name = ITA_rearmament_armor
-				bonus = 1.0
-				uses = 2
-				category = armor
-			}
-			add_tech_bonus = {
-				name = ITA_rearmament_air
-				bonus = 1.0
-				uses = 2
-				category = air_equipment
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_alpini_corps_2015
-		icon = GFX_goal_generic_special_forces
-		x = 14
-		y = 10
-		cost = 7
-
-		prerequisite = { focus = ITA_rearmament_2014 }
-		ai_will_do = {
-			factor = 85
-		}
-
-		completion_reward = {
-			army_experience = 60
-			add_tech_bonus = {
-				name = ITA_alpini_tech
-				bonus = 1.0
-				uses = 2
-				category = mountaineers_tech
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_air_force_2015
-		icon = GFX_goal_generic_air_fighter2
-		x = 18
-		y = 10
-		cost = 7
-
-		prerequisite = { focus = ITA_rearmament_2014 }
-		ai_will_do = {
-			factor = 85
-		}
-
-		completion_reward = {
-			air_experience = 60
-			add_tech_bonus = {
-				name = ITA_air_force_tech
-				bonus = 1.5
-				uses = 2
-				category = air_equipment
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_mediterranean_fleet_2015
-		icon = GFX_goal_generic_navy_battleship
-		x = 20
-		y = 10
-		cost = 7
-
-		prerequisite = { focus = ITA_rearmament_2014 }
-		ai_will_do = {
-			factor = 75
-		}
-
-		completion_reward = {
-			navy_experience = 50
-			add_tech_bonus = {
-				name = ITA_med_fleet_tech
-				bonus = 1.0
-				uses = 2
-				category = naval_equipment
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_cyber_defense_2016
-		icon = GFX_goal_generic_intelligence_exchange
-		x = 22
-		y = 9
-		cost = 6
-
-		prerequisite = { focus = ITA_watch_argentina_2012 }
-		prerequisite = { focus = ITA_rearmament_2014 }
-		ai_will_do = {
-			factor = 80
-		}
-
-		completion_reward = {
-			add_political_power = 40
-			add_intel = {
-				target = ARG
-				civilian_intel = 25
-				army_intel = 30
-				airforce_intel = 25
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_industrial_mobilization_2016
-		icon = GFX_goal_generic_construct_mil_factory
-		x = 6
-		y = 9
-		cost = 8
-
-		prerequisite = { focus = ITA_defense_industry_2012 }
-		ai_will_do = {
-			factor = 85
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = { is_core_of = ITA }
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_eu_joint_command_2016
-		icon = GFX_goal_generic_army_doctrines
-		x = 10
-		y = 10
-		cost = 7
-
-		prerequisite = { focus = ITA_rearmament_2014 }
-		ai_will_do = {
-			factor = 85
-		}
-
-		completion_reward = {
-			army_experience = 60
-			add_command_power = 40
-			GER = { army_experience = 40 }
-			HUN = { army_experience = 25 }
-		}
-	}
-
-	# ==========================================================================
-	# 2016–2020: ЧЕТЫРЁХЛЕТНЯЯ ВОЙНА
-	# ==========================================================================
-
-	focus = {
-		id = ITA_four_year_war_2016
-		icon = GFX_goal_generic_major_war
-		x = 12
-		y = 11
-		cost = 6
-
-		prerequisite = { focus = ITA_rearmament_2014 }
-		prerequisite = { focus = ITA_eu_joint_command_2016 }
-		ai_will_do = {
-			factor = 100
-		}
-
-		completion_reward = {
-			add_ideas = tgr_ita_four_year_war
-			add_war_support = 0.15
-			add_stability = -0.04
-			news_event = { id = tgr_news.3 days = 2 }
-		}
-	}
-
-	focus = {
-		id = ITA_alpine_front_2016
-		icon = GFX_goal_generic_defence
-		x = 14
-		y = 12
-		cost = 6
-
-		prerequisite = { focus = ITA_four_year_war_2016 }
-		ai_will_do = {
-			factor = 90
-		}
-
-		completion_reward = {
-			add_manpower = 100000
-			army_experience = 40
 			add_stability = 0.05
 		}
 	}
 
 	focus = {
-		id = ITA_summer_offensive_2017
-		icon = GFX_goal_generic_occupy_start_war
-		x = 12
-		y = 12
-		cost = 6
-
-		prerequisite = { focus = ITA_four_year_war_2016 }
-		ai_will_do = {
-			factor = 95
-		}
-
-		completion_reward = {
-			add_war_support = 0.10
-			add_stability = -0.05
-			add_manpower = 50000
-			army_experience = 45
-		}
-	}
-
-	focus = {
-		id = ITA_second_red_pact_2017
-		icon = GFX_goal_generic_political_pressure
-		x = 10
-		y = 13
+		id = ITA_sovereign_economy
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 30
+		y = 1
 		cost = 5
+		prerequisite = { focus = ITA_path_sovereign }
 
-		prerequisite = { focus = ITA_summer_offensive_2017 }
 		ai_will_do = {
-			factor = 100
+			factor = 70
 		}
 
 		completion_reward = {
-			add_ideas = tgr_ita_abandoned_by_london
-			add_stability = -0.10
-			ENG = { add_opinion_modifier = { target = ITA modifier = large_decrease } }
-			add_opinion_modifier = { target = ENG modifier = large_decrease }
+			random_owned_controlled_state = { add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
 		}
 	}
 
 	focus = {
-		id = ITA_po_valley_defense_2017
-		icon = GFX_goal_generic_fortify_city
-		x = 18
-		y = 12
-		cost = 6
-
-		prerequisite = { focus = ITA_alpine_front_2016 }
-		ai_will_do = {
-			factor = 80
-		}
-
-		completion_reward = {
-			add_manpower = 80000
-			army_experience = 40
-			add_political_power = 40
-		}
-	}
-
-	focus = {
-		id = ITA_total_war_economy_2018
-		icon = GFX_goal_generic_production2
-		x = 6
-		y = 12
-		cost = 8
-
-		prerequisite = { focus = ITA_industrial_mobilization_2016 }
-		ai_will_do = {
-			factor = 90
-		}
-
-		completion_reward = {
-			add_ideas = tgr_ita_total_war_economy
-			random_owned_controlled_state = {
-				limit = { is_core_of = ITA }
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_last_stand_2019
-		icon = GFX_goal_generic_defence
-		x = 16
-		y = 13
-		cost = 7
-
-		prerequisite = { focus = ITA_po_valley_defense_2017 }
-		ai_will_do = {
-			factor = 85
-		}
-
-		completion_reward = {
-			add_ideas = tgr_ita_alpine_redoubt
-			add_manpower = 200000
-			add_war_support = 0.10
-		}
-	}
-
-	focus = {
-		id = ITA_armistice_2020
-		icon = GFX_goal_generic_dangerous_deal
-		x = 12
-		y = 14
+		id = ITA_sovereign_army
+		icon = GFX_goal_generic_army_doctrines
+		x = 30
+		y = 2
 		cost = 5
+		prerequisite = { focus = ITA_path_sovereign }
 
-		prerequisite = { focus = ITA_second_red_pact_2017 }
-		prerequisite = { focus = ITA_last_stand_2019 }
-		available = {
-			date > 2019.1.1
-		}
 		ai_will_do = {
-			factor = 100
+			factor = 70
 		}
 
 		completion_reward = {
-			add_ideas = tgr_ita_armistice_2020
-			add_stability = -0.20
-			add_political_power = -100
+			army_experience = 50
+			add_command_power = 20
 		}
 	}
 
-	# ==========================================================================
-	# 2020–2038: ГУБЕРНАТОРСТВО КОНТИ
-	# ==========================================================================
-
 	focus = {
-		id = ITA_conti_governorate_2020
-		icon = GFX_goal_generic_political_pressure
-		x = 12
-		y = 15
+		id = ITA_sovereign_air
+		icon = GFX_goal_generic_build_airforce
+		x = 30
+		y = 3
 		cost = 5
+		prerequisite = { focus = ITA_path_sovereign }
 
-		prerequisite = { focus = ITA_armistice_2020 }
 		ai_will_do = {
-			factor = 100
+			factor = 70
 		}
 
 		completion_reward = {
-			set_cosmetic_tag = ITA_conti_governorate
-			promote_character = ITA_lorenzo_conti
-			set_politics = {
-				ruling_party = democratic
-				elections_allowed = no
-			}
-			remove_ideas = {
-				tgr_ita_conti_government
-				tgr_ita_armistice_2020
-			}
-			add_ideas = tgr_ita_conti_governorate
+			air_experience = 45
 		}
 	}
 
 	focus = {
-		id = ITA_collaboration_economy_2021
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 8
-		y = 16
-		cost = 7
+		id = ITA_sovereign_navy
+		icon = GFX_goal_generic_navy_battleship
+		x = 30
+		y = 4
+		cost = 5
+		prerequisite = { focus = ITA_path_sovereign }
 
-		prerequisite = { focus = ITA_conti_governorate_2020 }
-		mutually_exclusive = { focus = ITA_underground_resistance_2021 }
 		ai_will_do = {
-			factor = 60
+			factor = 70
 		}
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = { is_core_of = ITA }
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			add_stability = 0.08
+			navy_experience = 45
+		}
+	}
+
+	focus = {
+		id = ITA_sovereign_research
+		icon = GFX_goal_generic_secret_weapon
+		x = 30
+		y = 5
+		cost = 5
+		prerequisite = { focus = ITA_path_sovereign }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = ITA_sovereign_diplomacy
+		icon = GFX_goal_generic_major_alliance
+		x = 30
+		y = 6
+		cost = 5
+		prerequisite = { focus = ITA_path_sovereign }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
 			add_political_power = 60
+			add_stability = 0.03
 		}
 	}
 
 	focus = {
-		id = ITA_underground_resistance_2021
-		icon = GFX_goal_generic_war_with_comintern
-		x = 16
-		y = 16
-		cost = 6
-
-		prerequisite = { focus = ITA_conti_governorate_2020 }
-		mutually_exclusive = { focus = ITA_collaboration_economy_2021 }
-		ai_will_do = {
-			factor = 40
-		}
-
-		completion_reward = {
-			add_ideas = tgr_ita_underground_resistance
-			add_manpower = 50000
-			add_stability = -0.05
-		}
-	}
-
-	focus = {
-		id = ITA_third_tetyen_delegation_2026
-		icon = GFX_goal_generic_alliance
-		x = 12
-		y = 17
+		id = ITA_cooperation_economy
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 36
+		y = 1
 		cost = 5
+		prerequisite = { focus = ITA_path_cooperation }
 
-		prerequisite = { focus = ITA_conti_governorate_2020 }
 		ai_will_do = {
-			factor = 90
+			factor = 70
 		}
 
 		completion_reward = {
-			add_ideas = tgr_ita_tetyen_delegation
-			add_political_power = 100
+			random_owned_controlled_state = { add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = ITA_cooperation_army
+		icon = GFX_goal_generic_army_doctrines
+		x = 36
+		y = 2
+		cost = 5
+		prerequisite = { focus = ITA_path_cooperation }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			army_experience = 40
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = ITA_cooperation_air
+		icon = GFX_goal_generic_build_airforce
+		x = 36
+		y = 3
+		cost = 5
+		prerequisite = { focus = ITA_path_cooperation }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			air_experience = 35
+		}
+	}
+
+	focus = {
+		id = ITA_cooperation_navy
+		icon = GFX_goal_generic_navy_battleship
+		x = 36
+		y = 4
+		cost = 5
+		prerequisite = { focus = ITA_path_cooperation }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			navy_experience = 35
+		}
+	}
+
+	focus = {
+		id = ITA_cooperation_research
+		icon = GFX_goal_generic_secret_weapon
+		x = 36
+		y = 5
+		cost = 5
+		prerequisite = { focus = ITA_path_cooperation }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = ITA_cooperation_diplomacy
+		icon = GFX_goal_generic_improve_relations
+		x = 36
+		y = 6
+		cost = 5
+		prerequisite = { focus = ITA_path_cooperation }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_political_power = 60
 			add_stability = 0.04
 		}
 	}
 
 	focus = {
-		id = ITA_new_order_2030
-		icon = GFX_goal_generic_national_unity
-		x = 12
-		y = 18
-		cost = 6
-
-		prerequisite = { focus = ITA_third_tetyen_delegation_2026 }
-		ai_will_do = {
-			factor = 90
-		}
-
-		completion_reward = {
-			add_ideas = tgr_ita_new_order_2030
-			add_stability = 0.05
-			add_political_power = 80
-		}
-	}
-
-	focus = {
-		id = ITA_reconstruction_2036
-		icon = GFX_goal_generic_construct_infrastructure
-		x = 8
-		y = 19
-		cost = 7
-
-		prerequisite = { focus = ITA_new_order_2030 }
-		ai_will_do = {
-			factor = 80
-		}
-
-		completion_reward = {
-			add_ideas = tgr_ita_reconstruction
-			random_owned_controlled_state = {
-				limit = { is_core_of = ITA }
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_unrest_2036
-		icon = GFX_goal_generic_political_pressure
-		x = 12
-		y = 19
-		cost = 6
-
-		prerequisite = { focus = ITA_new_order_2030 }
-		ai_will_do = {
-			factor = 100
-		}
-
-		completion_reward = {
-			add_ideas = tgr_ita_unrest_2036
-			add_stability = -0.12
-			add_war_support = 0.05
-		}
-	}
-
-	focus = {
-		id = ITA_second_revolution_2038
-		icon = GFX_goal_generic_war_with_comintern
-		x = 12
-		y = 20
-		cost = 7
-
-		prerequisite = { focus = ITA_unrest_2036 }
-		ai_will_do = {
-			factor = 100
-		}
-
-		completion_reward = {
-			add_stability = -0.10
-			add_political_power = 50
-			add_popularity = {
-				ideology = democratic
-				popularity = 0.25
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_federation_autonomy_2040
-		icon = GFX_goal_support_democracy
-		x = 12
-		y = 21
+		id = ITA_gen_01
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 42
+		y = 0
 		cost = 5
 
-		prerequisite = { focus = ITA_second_revolution_2038 }
 		ai_will_do = {
-			factor = 95
+			factor = 70
 		}
 
 		completion_reward = {
-			remove_ideas = {
-				tgr_ita_unrest_2036
-				tgr_ita_conti_governorate
-			}
-			add_ideas = tgr_ita_federation_autonomy
-			add_stability = 0.20
-			add_political_power = 100
+			random_owned_controlled_state = { add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
 		}
 	}
 
 	focus = {
-		id = ITA_federal_armed_forces_2040
-		icon = GFX_goal_generic_army_doctrines
-		x = 16
-		y = 20
-		cost = 7
+		id = ITA_gen_02
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 43
+		y = 0
+		cost = 5
 
-		prerequisite = { focus = ITA_federation_autonomy_2040 }
 		ai_will_do = {
-			factor = 85
+			factor = 70
 		}
 
 		completion_reward = {
-			add_ideas = tgr_ita_federal_army
-			army_experience = 60
+			random_owned_controlled_state = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = ITA_gen_03
+		icon = GFX_goal_generic_consumer_goods
+		x = 44
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_stability = 0.05
 			add_manpower = 80000
 		}
 	}
+
+	focus = {
+		id = ITA_gen_04
+		icon = GFX_goal_generic_production2
+		x = 45
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = ITA_gen_05
+		icon = GFX_goal_generic_army_doctrines
+		x = 46
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			army_experience = 45
+			add_command_power = 20
+		}
+	}
+
+	focus = {
+		id = ITA_gen_06
+		icon = GFX_goal_generic_army_tanks
+		x = 47
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			army_experience = 40
+			add_command_power = 15
+		}
+	}
+
+	focus = {
+		id = ITA_gen_07
+		icon = GFX_goal_generic_build_airforce
+		x = 48
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			air_experience = 45
+		}
+	}
+
+	focus = {
+		id = ITA_gen_08
+		icon = GFX_goal_generic_navy_battleship
+		x = 49
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			navy_experience = 45
+		}
+	}
+
+	focus = {
+		id = ITA_gen_09
+		icon = GFX_goal_generic_defence
+		x = 42
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			air_experience = 30
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = ITA_gen_10
+		icon = GFX_goal_generic_special_forces
+		x = 43
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			army_experience = 40
+			add_command_power = 20
+		}
+	}
+
+	focus = {
+		id = ITA_gen_11
+		icon = GFX_goal_generic_secret_weapon
+		x = 44
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = ITA_gen_12
+		icon = GFX_goal_generic_national_unity
+		x = 45
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = ITA_gen_13
+		icon = GFX_goal_generic_consumer_goods
+		x = 46
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_manpower = 100000
+		}
+	}
+
+	focus = {
+		id = ITA_gen_14
+		icon = GFX_goal_generic_political_pressure
+		x = 47
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_stability = 0.08
+			add_political_power = 50
+		}
+	}
+
 }

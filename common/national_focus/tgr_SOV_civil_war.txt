@@ -1,0 +1,359 @@
+﻿################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Civil War Focus Trees: SOV — Россия, 2000 год
+#
+# Две отдельные ветки:
+#   1) tgr_russia_soyuz_civil_war_focus — правительство Меньшикова («Союз»);
+#   2) tgr_russia_junta_civil_war_focus — мятежная Военная Республика Черненко.
+#
+# Древа загружаются только через load_focus_tree в момент начала гражданской
+# войны, поэтому блок country нужен лишь для порядка и отладки.
+# HoI4 Compatibility: 1.16.10
+################################################################################
+
+# ============================================================================
+# 1. ПРАВИТЕЛЬСТВО МЕНЬШИКОВА
+# ============================================================================
+
+focus_tree = {
+	id = tgr_russia_soyuz_civil_war_focus
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_country_flag = SOV_soyuz_side
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 50 y = 2600 }
+
+	focus = {
+		id = SOV_cw_gov_hold_moscow
+		icon = GFX_goal_generic_fortify_city
+		x = 10
+		y = 0
+		cost = 3
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.10
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SOV_cw_gov_fsb_loyalty
+		icon = GFX_goal_generic_secret_weapon
+		x = 8
+		y = 1
+		cost = 4
+
+		prerequisite = { focus = SOV_cw_gov_hold_moscow }
+		ai_will_do = {
+			factor = 90
+		}
+
+		completion_reward = {
+			add_ideas = tgr_sov_fsb_prerogative
+			add_stability = 0.08
+		}
+	}
+
+	focus = {
+		id = SOV_cw_gov_duma_support
+		icon = GFX_goal_generic_political_pressure
+		x = 12
+		y = 1
+		cost = 4
+
+		prerequisite = { focus = SOV_cw_gov_hold_moscow }
+		ai_will_do = {
+			factor = 85
+		}
+
+		completion_reward = {
+			add_political_power = 75
+			add_popularity = { ideology = neutrality popularity = 0.10 }
+		}
+	}
+
+	focus = {
+		id = SOV_cw_gov_mobilize_reserves
+		icon = GFX_goal_generic_special_forces
+		x = 10
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SOV_cw_gov_hold_moscow }
+		ai_will_do = {
+			factor = 95
+		}
+
+		completion_reward = {
+			add_manpower = 250000
+			army_experience = 40
+		}
+	}
+
+	focus = {
+		id = SOV_cw_gov_volga_defense
+		icon = GFX_goal_generic_defence
+		x = 8
+		y = 2
+		cost = 4
+
+		prerequisite = { focus = SOV_cw_gov_fsb_loyalty }
+		ai_will_do = {
+			factor = 85
+		}
+
+		completion_reward = {
+			add_war_support = 0.08
+			add_manpower = 100000
+		}
+	}
+
+	focus = {
+		id = SOV_cw_gov_foreign_support
+		icon = GFX_goal_generic_improve_relations
+		x = 14
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SOV_cw_gov_duma_support }
+		ai_will_do = {
+			factor = 75
+		}
+
+		completion_reward = {
+			add_political_power = 60
+			GER = { add_opinion_modifier = { target = SOV modifier = medium_increase } }
+			FRA = { add_opinion_modifier = { target = SOV modifier = medium_increase } }
+			ENG = { add_opinion_modifier = { target = SOV modifier = medium_increase } }
+		}
+	}
+
+	focus = {
+		id = SOV_cw_gov_crush_junta
+		icon = GFX_goal_generic_attack_allies
+		x = 10
+		y = 3
+		cost = 5
+
+		prerequisite = { focus = SOV_cw_gov_mobilize_reserves }
+		prerequisite = { focus = SOV_cw_gov_volga_defense }
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_war_support = 0.10
+			army_experience = 60
+			add_command_power = 30
+		}
+	}
+
+	focus = {
+		id = SOV_cw_gov_victory
+		icon = GFX_goal_generic_national_unity
+		x = 10
+		y = 4
+		cost = 5
+
+		prerequisite = { focus = SOV_cw_gov_crush_junta }
+		prerequisite = { focus = SOV_cw_gov_foreign_support }
+		ai_will_do = {
+			factor = 95
+		}
+
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 100
+			remove_ideas = tgr_sov_army_purge_crisis
+		}
+	}
+}
+
+# ============================================================================
+# 2. ВОЕННАЯ РЕСПУБЛИКА ЧЕРНЕНКО
+# ============================================================================
+
+focus_tree = {
+	id = tgr_russia_junta_civil_war_focus
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_country_flag = SOV_junta_side
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 50 y = 2600 }
+
+	focus = {
+		id = SOV_cw_junta_uprising
+		icon = GFX_goal_support_fascism
+		x = 10
+		y = 0
+		cost = 3
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_war_support = 0.15
+			add_stability = 0.05
+			army_experience = 30
+		}
+	}
+
+	focus = {
+		id = SOV_cw_junta_officers
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 8
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SOV_cw_junta_uprising }
+		ai_will_do = {
+			factor = 95
+		}
+
+		completion_reward = {
+			add_manpower = 200000
+			add_doctrine_cost_reduction = {
+				name = SOV_cw_junta_officers_doc
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_cw_junta_ural_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 12
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SOV_cw_junta_uprising }
+		ai_will_do = {
+			factor = 90
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_cw_junta_stavka
+		icon = GFX_goal_generic_army_doctrines
+		x = 10
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SOV_cw_junta_uprising }
+		ai_will_do = {
+			factor = 95
+		}
+
+		completion_reward = {
+			add_command_power = 40
+			army_experience = 50
+			add_ideas = tgr_sov_stavka_reborn
+		}
+	}
+
+	focus = {
+		id = SOV_cw_junta_volunteers
+		icon = GFX_goal_generic_special_forces
+		x = 8
+		y = 2
+		cost = 4
+
+		prerequisite = { focus = SOV_cw_junta_officers }
+		ai_will_do = {
+			factor = 85
+		}
+
+		completion_reward = {
+			add_manpower = 150000
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_cw_junta_foreign_contacts
+		icon = GFX_goal_generic_improve_relations
+		x = 14
+		y = 2
+		cost = 4
+
+		prerequisite = { focus = SOV_cw_junta_ural_industry }
+		ai_will_do = {
+			factor = 75
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			GER = { add_opinion_modifier = { target = SOV modifier = small_increase } }
+		}
+	}
+
+	focus = {
+		id = SOV_cw_junta_march_on_moscow
+		icon = GFX_goal_generic_occupy_start_war
+		x = 10
+		y = 3
+		cost = 5
+
+		prerequisite = { focus = SOV_cw_junta_stavka }
+		prerequisite = { focus = SOV_cw_junta_volunteers }
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+			add_war_support = 0.10
+			army_experience = 60
+			add_command_power = 30
+		}
+	}
+
+	focus = {
+		id = SOV_cw_junta_victory
+		icon = GFX_goal_generic_national_unity
+		x = 10
+		y = 4
+		cost = 5
+
+		prerequisite = { focus = SOV_cw_junta_march_on_moscow }
+		prerequisite = { focus = SOV_cw_junta_foreign_contacts }
+		ai_will_do = {
+			factor = 95
+		}
+
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 100
+		}
+	}
+}

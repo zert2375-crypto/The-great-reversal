@@ -41,14 +41,15 @@ country_event = {
 	option = {
 		name = tgr_sov.2.a
 		ai_chance = { factor = 92 }
-		promote_character = SOV_mikhail_chernenko
-		set_politics = { ruling_party = fascism elections_allowed = no }
+		add_political_power = 50
+		add_stability = -0.05
+		add_war_support = 0.05
 	}
 	option = {
 		name = tgr_sov.2.b
 		ai_chance = { factor = 8 }
-		add_stability = -0.10
-		add_political_power = 100
+		add_stability = 0.05
+		add_political_power = -50
 	}
 }
 

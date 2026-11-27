@@ -1,0 +1,206 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Карта мира на 1 января 2000 года.
+#
+# По решению автора мода деколонизации не было: Британская, Французская,
+# Итальянская, Бельгийская, Голландская, Португальская и Японская империи
+# сохраняются в границах 1936 года. Меняются только:
+#   1) распад СССР на 15 союзных республик (Россия + 14);
+#   2) создание САГ из Колумбии, Эквадора, Венесуэлы и Гайаны.
+#
+# Скрипт выполняется в on_startup только для закладки 2000 года.
+# HoI4 Compatibility: 1.16.10
+################################################################################
+
+tgr_2000_world_map = {
+
+	# ======================================================================
+	# 1. СОЗДАНИЕ САГ
+	# Колумбия + Эквадор + Венесуэла + Гайана (Британская Гвиана).
+	# ======================================================================
+
+	305 = {
+		set_state_owner_to = SAG
+		set_state_controller_to = SAG
+		add_core_of = SAG
+		remove_core_of = ECU
+	}
+	306 = {
+		set_state_owner_to = SAG
+		set_state_controller_to = SAG
+		add_core_of = SAG
+		remove_core_of = COL
+	}
+	307 = {
+		set_state_owner_to = SAG
+		set_state_controller_to = SAG
+		add_core_of = SAG
+		remove_core_of = VEN
+	}
+	486 = {
+		set_state_owner_to = SAG
+		set_state_controller_to = SAG
+		add_core_of = SAG
+		remove_core_of = COL
+	}
+	488 = {
+		set_state_owner_to = SAG
+		set_state_controller_to = SAG
+		add_core_of = SAG
+		remove_core_of = VEN
+	}
+	489 = {
+		set_state_owner_to = SAG
+		set_state_controller_to = SAG
+		add_core_of = SAG
+		remove_core_of = VEN
+	}
+	490 = {
+		set_state_owner_to = SAG
+		set_state_controller_to = SAG
+		add_core_of = SAG
+		remove_core_of = ECU
+		remove_core_of = PRU
+	}
+	493 = {
+		set_state_owner_to = SAG
+		set_state_controller_to = SAG
+		add_core_of = SAG
+		remove_core_of = COL
+	}
+	649 = {
+		set_state_owner_to = SAG
+		set_state_controller_to = SAG
+		add_core_of = SAG
+		remove_core_of = ECU
+	}
+	# Британская Гвиана — в состав САГ.
+	687 = {
+		set_state_owner_to = SAG
+		set_state_controller_to = SAG
+		add_core_of = SAG
+		remove_core_of = ENG
+		remove_core_of = GYA
+	}
+
+	# ======================================================================
+	# 2. БЕССАРАБИЯ ДЛЯ МОЛДОВЫ
+	# Без 78 и 766 у Молдовы не будет ни столицы, ни нормальной территории.
+	# Остальные границы (Западная Украина, Западная Беларусь, Тува,
+	# Кёнигсберг) не трогаем — по условию «границы оставить как есть».
+	# ======================================================================
+
+	78 = { set_state_owner_to = SOV set_state_controller_to = SOV remove_core_of = ROM }
+	766 = { set_state_owner_to = SOV set_state_controller_to = SOV remove_core_of = ROM }
+
+	# ======================================================================
+	# 3. РАСПАД СССР
+	# Молдова освобождается первой, чтобы ей достались 78, 766 и 834,
+	# а не Украине (у 834 есть и украинский, и молдавский core).
+	# ======================================================================
+
+	SOV = {
+		release_autonomy = { target = MOL autonomy_state = autonomy_free }
+
+		release_autonomy = { target = UKR autonomy_state = autonomy_free }
+		release_autonomy = { target = BLR autonomy_state = autonomy_free }
+
+		release_autonomy = { target = GEO autonomy_state = autonomy_free }
+		release_autonomy = { target = ARM autonomy_state = autonomy_free }
+		release_autonomy = { target = AZR autonomy_state = autonomy_free }
+
+		release_autonomy = { target = KAZ autonomy_state = autonomy_free }
+		release_autonomy = { target = UZB autonomy_state = autonomy_free }
+		release_autonomy = { target = TMS autonomy_state = autonomy_free }
+		release_autonomy = { target = KYR autonomy_state = autonomy_free }
+		release_autonomy = { target = TAJ autonomy_state = autonomy_free }
+	}
+
+	# Крым в 1991 году входил в УССР (в ваниле у него нет украинского core).
+	137 = {
+		set_state_owner_to = UKR
+		set_state_controller_to = UKR
+		add_core_of = UKR
+		remove_core_of = SOV
+	}
+
+	# ======================================================================
+	# 4. ЧИСТКА CORE-ФЛАГОВ
+	# Убираем советские core с территорий республик и старые core
+	# метрополий с переданных земель.
+	# ======================================================================
+
+	every_state = {
+		limit = { is_owned_by = UKR }
+		add_core_of = UKR
+		remove_core_of = SOV
+	}
+	every_state = {
+		limit = { is_owned_by = BLR }
+		add_core_of = BLR
+		remove_core_of = SOV
+	}
+	every_state = {
+		limit = { is_owned_by = MOL }
+		add_core_of = MOL
+		remove_core_of = SOV
+		remove_core_of = UKR
+	}
+	every_state = {
+		limit = { is_owned_by = GEO }
+		add_core_of = GEO
+		remove_core_of = SOV
+	}
+	every_state = {
+		limit = { is_owned_by = ARM }
+		add_core_of = ARM
+		remove_core_of = SOV
+	}
+	every_state = {
+		limit = { is_owned_by = AZR }
+		add_core_of = AZR
+		remove_core_of = SOV
+	}
+	every_state = {
+		limit = { is_owned_by = KAZ }
+		add_core_of = KAZ
+		remove_core_of = SOV
+	}
+	every_state = {
+		limit = { is_owned_by = UZB }
+		add_core_of = UZB
+		remove_core_of = SOV
+	}
+	every_state = {
+		limit = { is_owned_by = TMS }
+		add_core_of = TMS
+		remove_core_of = SOV
+	}
+	every_state = {
+		limit = { is_owned_by = KYR }
+		add_core_of = KYR
+		remove_core_of = SOV
+	}
+	every_state = {
+		limit = { is_owned_by = TAJ }
+		add_core_of = TAJ
+		remove_core_of = SOV
+	}
+	every_state = {
+		limit = { is_owned_by = SAG }
+		add_core_of = SAG
+		remove_core_of = COL
+		remove_core_of = ECU
+		remove_core_of = VEN
+		remove_core_of = GYA
+	}
+
+	# Новые республики и САГ могли появиться уже после первого every_country
+	# в on_startup, поэтому выдаём им Берлинский договор отдельно.
+	every_country = {
+		if = {
+			limit = { NOT = { has_idea = tgr_berlin_nuclear_treaty } }
+			add_ideas = tgr_berlin_nuclear_treaty
+		}
+	}
+}

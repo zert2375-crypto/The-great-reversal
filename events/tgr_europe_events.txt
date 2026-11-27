@@ -30,6 +30,14 @@ country_event = {
 
 	is_triggered_only = yes
 	fire_only_once = yes
+	trigger = {
+		NOT = {
+			OR = {
+				has_country_flag = FRA_republican_path
+				has_country_flag = FRA_reconciliation_path
+			}
+		}
+	}
 
 	option = {
 		name = tgr_eur.2.a
@@ -53,6 +61,14 @@ country_event = {
 
 	is_triggered_only = yes
 	fire_only_once = yes
+	trigger = {
+		NOT = {
+			OR = {
+				has_country_flag = ENG_parliamentary_path
+				has_country_flag = ENG_commonwealth_path
+			}
+		}
+	}
 
 	option = {
 		name = tgr_eur.3.a

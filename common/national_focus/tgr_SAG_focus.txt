@@ -1,4 +1,4 @@
-################################################################################
+﻿################################################################################
 # THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
 # National Focus Tree: SAG — САГ (Соединённые Американские Государства)
 # HoI4 Compatibility: 1.16.10
@@ -20,7 +20,7 @@ focus_tree = {
 	continuous_focus_position = { x = 50 y = 2600 }
 
 	focus = {
-		id = SAG_confederation_act_2001
+		id = SAG_confederation_act
 		icon = GFX_goal_generic_national_unity
 		x = 5
 		y = 0
@@ -34,12 +34,11 @@ focus_tree = {
 			add_political_power = 120
 			add_stability = 0.12
 			every_state = {
-				limit = { OR = { is_core_of = COL is_core_of = ECU is_core_of = VEN } }
+				limit = { is_owned_by = SAG }
 				add_core_of = SAG
 			}
 		}
 	}
-
 	focus = {
 		id = SAG_andean_oil_and_industry
 		icon = GFX_goal_generic_oil_refinery
@@ -47,7 +46,7 @@ focus_tree = {
 		y = 1
 		cost = 7
 
-		prerequisite = { focus = SAG_confederation_act_2001 }
+		prerequisite = { focus = SAG_confederation_act }
 		ai_will_do = {
 			factor = 85
 		}
@@ -60,7 +59,6 @@ focus_tree = {
 			add_resource = { type = oil amount = 18 state = 307 }
 		}
 	}
-
 	focus = {
 		id = SAG_amazon_corps_command
 		icon = GFX_goal_generic_allies_build_infantry
@@ -68,7 +66,7 @@ focus_tree = {
 		y = 1
 		cost = 6
 
-		prerequisite = { focus = SAG_confederation_act_2001 }
+		prerequisite = { focus = SAG_confederation_act }
 		ai_will_do = {
 			factor = 85
 		}
@@ -82,56 +80,14 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
-		id = SAG_sign_first_red_pact_2006
-		icon = GFX_goal_molotov_ribbentrop_pact
-		x = 5
-		y = 2
-		cost = 5
-
-		prerequisite = { focus = SAG_andean_oil_and_industry }
-		prerequisite = { focus = SAG_amazon_corps_command }
-		ai_will_do = {
-			factor = 100
-		}
-
-		completion_reward = {
-			add_opinion_modifier = { target = ARG modifier = large_increase }
-			create_wargoal = { type = annex_everything target = BRA }
-			add_state_claim = 495
-			add_state_claim = 497
-			add_ideas = tgr_sag_argen_dependency
-		}
-	}
-
-	focus = {
-		id = SAG_northern_brazil_campaign
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 5
-		y = 3
-		cost = 6
-
-		prerequisite = { focus = SAG_sign_first_red_pact_2006 }
-		ai_will_do = {
-			factor = 90
-		}
-
-		completion_reward = {
-			add_war_support = 0.10
-			army_experience = 40
-			add_political_power = 75
-		}
-	}
-
-	focus = {
-		id = SAG_argen_economic_loans
+		id = SAG_foreign_loans
 		icon = GFX_goal_generic_construct_infrastructure
 		x = 3
 		y = 4
 		cost = 6
 
-		prerequisite = { focus = SAG_northern_brazil_campaign }
+		
 		mutually_exclusive = { focus = SAG_defy_buenos_aires }
 		ai_will_do = {
 			factor = 90
@@ -145,7 +101,6 @@ focus_tree = {
 			ARG = { add_political_power = 50 }
 		}
 	}
-
 	focus = {
 		id = SAG_defy_buenos_aires
 		icon = GFX_goal_generic_defence
@@ -153,8 +108,8 @@ focus_tree = {
 		y = 4
 		cost = 7
 
-		prerequisite = { focus = SAG_northern_brazil_campaign }
-		mutually_exclusive = { focus = SAG_argen_economic_loans }
+		
+		mutually_exclusive = { focus = SAG_foreign_loans }
 		ai_will_do = {
 			factor = 10
 		}
@@ -165,28 +120,6 @@ focus_tree = {
 			add_manpower = 120000
 		}
 	}
-
-	focus = {
-		id = SAG_union_with_argen_state_2010
-		icon = GFX_goal_generic_forceful_treaty
-		x = 3
-		y = 5
-		cost = 5
-
-		prerequisite = { focus = SAG_argen_economic_loans }
-		ai_will_do = {
-			factor = 95
-		}
-
-		completion_reward = {
-			set_cosmetic_tag = SAG_argen_protectorate
-			ARG = {
-				puppet = SAG
-				add_political_power = 100
-			}
-		}
-	}
-
 	focus = {
 		id = SAG_fortify_northern_andes
 		icon = GFX_goal_generic_fortify_city
@@ -211,7 +144,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = SAG_caribbean_naval_program
 		icon = GFX_goal_generic_construct_naval_dockyard
@@ -219,7 +151,7 @@ focus_tree = {
 		y = 6
 		cost = 7
 
-		prerequisite = { focus = SAG_union_with_argen_state_2010 focus = SAG_fortify_northern_andes }
+		prerequisite = { focus = SAG_fortify_northern_andes }
 		ai_will_do = {
 			factor = 70
 		}
@@ -233,4 +165,663 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = SAG_path_sovereign
+		icon = GFX_goal_generic_defence
+		x = 30
+		y = 0
+		cost = 4
+		available = {
+			OR = {
+				ARG = { has_country_flag = ARG_akt_path }
+				ARG = { has_country_flag = ARG_democratic_path }
+			}
+		}
+		mutually_exclusive = { focus = SAG_path_cooperation }
+		ai_will_do = {
+			factor = 50
+			modifier = { factor = 2.0 ARG = { has_country_flag = ARG_akt_path } }
+			modifier = { factor = 0.3 ARG = { has_country_flag = ARG_democratic_path } }
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SAG_path_cooperation
+		icon = GFX_goal_generic_improve_relations
+		x = 36
+		y = 0
+		cost = 4
+		available = {
+			OR = {
+				ARG = { has_country_flag = ARG_akt_path }
+				ARG = { has_country_flag = ARG_democratic_path }
+			}
+		}
+		mutually_exclusive = { focus = SAG_path_sovereign }
+		ai_will_do = {
+			factor = 50
+			modifier = { factor = 2.0 ARG = { has_country_flag = ARG_democratic_path } }
+			modifier = { factor = 0.3 ARG = { has_country_flag = ARG_akt_path } }
+		}
+
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SAG_sovereign_economy
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 30
+		y = 1
+		cost = 5
+		prerequisite = { focus = SAG_path_sovereign }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = { add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SAG_sovereign_army
+		icon = GFX_goal_generic_army_doctrines
+		x = 30
+		y = 2
+		cost = 5
+		prerequisite = { focus = SAG_path_sovereign }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			army_experience = 50
+			add_command_power = 20
+		}
+	}
+
+	focus = {
+		id = SAG_sovereign_air
+		icon = GFX_goal_generic_build_airforce
+		x = 30
+		y = 3
+		cost = 5
+		prerequisite = { focus = SAG_path_sovereign }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			air_experience = 45
+		}
+	}
+
+	focus = {
+		id = SAG_sovereign_navy
+		icon = GFX_goal_generic_navy_battleship
+		x = 30
+		y = 4
+		cost = 5
+		prerequisite = { focus = SAG_path_sovereign }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			navy_experience = 45
+		}
+	}
+
+	focus = {
+		id = SAG_sovereign_research
+		icon = GFX_goal_generic_secret_weapon
+		x = 30
+		y = 5
+		cost = 5
+		prerequisite = { focus = SAG_path_sovereign }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = SAG_sovereign_diplomacy
+		icon = GFX_goal_generic_major_alliance
+		x = 30
+		y = 6
+		cost = 5
+		prerequisite = { focus = SAG_path_sovereign }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = SAG_cooperation_economy
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 36
+		y = 1
+		cost = 5
+		prerequisite = { focus = SAG_path_cooperation }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = { add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SAG_cooperation_army
+		icon = GFX_goal_generic_army_doctrines
+		x = 36
+		y = 2
+		cost = 5
+		prerequisite = { focus = SAG_path_cooperation }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			army_experience = 40
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = SAG_cooperation_air
+		icon = GFX_goal_generic_build_airforce
+		x = 36
+		y = 3
+		cost = 5
+		prerequisite = { focus = SAG_path_cooperation }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			air_experience = 35
+		}
+	}
+
+	focus = {
+		id = SAG_cooperation_navy
+		icon = GFX_goal_generic_navy_battleship
+		x = 36
+		y = 4
+		cost = 5
+		prerequisite = { focus = SAG_path_cooperation }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			navy_experience = 35
+		}
+	}
+
+	focus = {
+		id = SAG_cooperation_research
+		icon = GFX_goal_generic_secret_weapon
+		x = 36
+		y = 5
+		cost = 5
+		prerequisite = { focus = SAG_path_cooperation }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = SAG_cooperation_diplomacy
+		icon = GFX_goal_generic_improve_relations
+		x = 36
+		y = 6
+		cost = 5
+		prerequisite = { focus = SAG_path_cooperation }
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.04
+		}
+	}
+
+	focus = {
+		id = SAG_gen_01
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 42
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = { add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SAG_gen_02
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 43
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SAG_gen_03
+		icon = GFX_goal_generic_consumer_goods
+		x = 44
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_manpower = 80000
+		}
+	}
+
+	focus = {
+		id = SAG_gen_04
+		icon = GFX_goal_generic_production2
+		x = 45
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = SAG_gen_05
+		icon = GFX_goal_generic_army_doctrines
+		x = 46
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			army_experience = 45
+			add_command_power = 20
+		}
+	}
+
+	focus = {
+		id = SAG_gen_06
+		icon = GFX_goal_generic_army_tanks
+		x = 47
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			army_experience = 40
+			add_command_power = 15
+		}
+	}
+
+	focus = {
+		id = SAG_gen_07
+		icon = GFX_goal_generic_build_airforce
+		x = 48
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			air_experience = 45
+		}
+	}
+
+	focus = {
+		id = SAG_gen_08
+		icon = GFX_goal_generic_navy_battleship
+		x = 49
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			navy_experience = 45
+		}
+	}
+
+	focus = {
+		id = SAG_gen_09
+		icon = GFX_goal_generic_defence
+		x = 42
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			air_experience = 30
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = SAG_gen_10
+		icon = GFX_goal_generic_special_forces
+		x = 43
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			army_experience = 40
+			add_command_power = 20
+		}
+	}
+
+	focus = {
+		id = SAG_gen_11
+		icon = GFX_goal_generic_secret_weapon
+		x = 44
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = SAG_gen_12
+		icon = GFX_goal_generic_national_unity
+		x = 45
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SAG_gen_13
+		icon = GFX_goal_generic_consumer_goods
+		x = 46
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_manpower = 100000
+		}
+	}
+
+	focus = {
+		id = SAG_gen_14
+		icon = GFX_goal_generic_political_pressure
+		x = 47
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_stability = 0.08
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SAG_gen_15
+		icon = GFX_goal_generic_national_unity
+		x = 48
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_stability = 0.08
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SAG_gen_16
+		icon = GFX_goal_generic_improve_relations
+		x = 49
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = SAG_gen_17
+		icon = GFX_goal_generic_major_alliance
+		x = 42
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = SAG_gen_18
+		icon = GFX_goal_generic_oil_refinery
+		x = 43
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = SAG_gen_19
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 44
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = { add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SAG_gen_20
+		icon = GFX_goal_generic_secret_weapon
+		x = 45
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = SAG_gen_21
+		icon = GFX_goal_generic_army_motorized
+		x = 46
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			army_experience = 40
+			add_command_power = 15
+		}
+	}
+
+	focus = {
+		id = SAG_gen_22
+		icon = GFX_goal_generic_fortify_city
+		x = 47
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_manpower = 80000
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = SAG_gen_23
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 48
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SAG_gen_24
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 49
+		y = 2
+		cost = 5
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.03
+		}
+	}
+
 }
