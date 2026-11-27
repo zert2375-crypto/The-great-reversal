@@ -84,6 +84,108 @@ ideas = {
 			}
 		}
 
+		tgr_sov_fsb_prerogative = {
+			picture = generic_intel_bonus
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.1
+				stability_factor = 0.05
+				justify_war_goal_time = -0.1
+			}
+		}
+
+		tgr_sov_stavka_reborn = {
+			picture = general_staff
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.08
+				planning_speed = 0.15
+				command_power_gain = 0.15
+			}
+		}
+
+		tgr_sov_officer_academy = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.05
+				planning_speed = 0.1
+				land_reinforce_rate = 0.05
+			}
+		}
+
+		tgr_sov_state_propaganda = {
+			picture = trotskyite_plot_purged
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.08
+				political_power_gain = 0.05
+			}
+		}
+
+		tgr_sov_church_concordat = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.08
+				conscription = 0.01
+			}
+		}
+
+		tgr_sov_guided_democracy = {
+			picture = SOV_system_decentralization
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.05
+				neutrality_drift = 0.05
+			}
+		}
+
+		tgr_sov_consumer_recovery = {
+			picture = generic_foreign_capital
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+				stability_factor = 0.08
+			}
+		}
+
+		tgr_sov_eurasian_union = {
+			picture = generic_foreign_capital
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.1
+				stability_factor = 0.1
+				industrial_capacity_factory = 0.05
+			}
+		}
+
 		tgr_jap_2000_chaos = {
 			picture = jap_interservice_rivalry_army_dominant
 			allowed = {

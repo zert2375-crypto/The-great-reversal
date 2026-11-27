@@ -94,7 +94,7 @@
 - `src/mod/types.ts` — типы данных (`CountrySpec`, `CharacterSpec`, `NationalSpirit`, `FocusNode`, `FocusTreeSpec`, `ModEvent`, `GeneratedModFile`, `ValidationReport`, `WorldSimState`).
 - `src/mod/data/countries.ts` — 8 ключевых держав, 23 персонажа (`CHARACTERS`), 33 национальных духа (`NATIONAL_SPIRITS`), косметические теги и стартовые расклады на 2000 год.
 - `src/mod/data/focuses_arg.ts` — древо Аргентины / Аргенского Государства / Аргенской Федерации (`ARG`, 48 фокусов).
-- `src/mod/data/focuses_sov_jap.ts` — древа России (`SOV`, 22 фокуса) и Антарды / Японии (`JAP`, 18 фокусов).
+- `src/mod/data/focuses_sov_jap.ts` — древа России (`SOV`, 58 фокусов) и Антарды / Японии (`JAP`, 18 фокусов).
 - `src/mod/data/focuses_others.ts` — древа САГ (`SAG`, 10 фокусов), Франции (`FRA`, 10 фокусов) и Великобритании (`ENG`, 10 фокусов).
 - `src/mod/data/events.ts` — 6 исторических эпох (`TIMELINE_ERAS`) и 39 связанных событий (`MOD_EVENTS`) с кодом Clausewitz и дельтами для веб-симулятора.
 - `src/mod/compiler.ts` — компилятор файлов HoI4 1.16.10 (`compileAllModFiles`), валидатор скобок/наград/BOM (`validateModPackage`) и экспортёр `.zip` (`exportModAsZip`).
