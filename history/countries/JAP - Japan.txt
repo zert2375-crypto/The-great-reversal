@@ -27,6 +27,7 @@ add_ideas = {
 }
 
 recruit_character = JAP_crisis_cabinet
+recruit_character = JAP_council_of_antarda
 recruit_character = JAP_kenji_takahashi
 recruit_character = JAP_haruto_sato
 recruit_character = JAP_ren_nakamura

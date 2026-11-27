@@ -25,7 +25,8 @@ add_ideas = {
 	tgr_eu_bloc_charter
 }
 
-recruit_character = GER_klaus_weber
+recruit_character = GER_heinrich_von_berg
+recruit_character = GER_karl_weiss
 
 set_politics = {
 	ruling_party = democratic

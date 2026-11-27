@@ -27,6 +27,7 @@ add_ideas = {
 	tgr_sov_berlin_circle_ties
 }
 
+recruit_character = SOV_boris_yeltsin
 recruit_character = SOV_alexei_menshikov
 recruit_character = SOV_mikhail_chernenko
 recruit_character = SOV_viktor_gromov

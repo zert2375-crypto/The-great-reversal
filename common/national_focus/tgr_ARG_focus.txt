@@ -10,7 +10,8 @@ focus_tree = {
 	country = {
 		factor = 0
 		modifier = {
-			add = 10
+			# Высокий приоритет, чтобы модовое древо гарантированно перебивало ванильное
+			add = 100
 			tag = ARG
 		}
 	}
@@ -610,9 +611,9 @@ focus_tree = {
 			air_experience = 45
 			add_intel = {
 				target = FRA
-				civilian = 25
-				army = 40
-				airforce = 35
+				civilian_intel = 25
+				army_intel = 40
+				airforce_intel = 35
 			}
 			FRA = { country_event = { id = tgr_eur.1 days = 2 } }
 		}

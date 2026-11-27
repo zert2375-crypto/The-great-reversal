@@ -1,0 +1,18 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for SLO (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	SLO_marek_kral = {
+		name = SLO_marek_kral
+		portraits = {
+			civilian = { large = "GFX_portrait_CZE_frantishek_havlik" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { smooth_talking_charmer }
+		}
+	}
+}

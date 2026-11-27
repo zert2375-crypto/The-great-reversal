@@ -1,0 +1,26 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for KOR (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	KOR_park_song_hoo = {
+		name = KOR_park_song_hoo
+		portraits = {
+			civilian = { large = "GFX_portrait_KOR_park_song_hoo" }
+			army = { large = "GFX_portrait_KOR_park_song_hoo" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { warrior_code }
+		}
+		corps_commander = {
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+}

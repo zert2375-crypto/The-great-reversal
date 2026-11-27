@@ -1,0 +1,18 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for SCA — Scandinavia (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	SCA_sven_lindqvist = {
+		name = SCA_sven_lindqvist
+		portraits = {
+			civilian = { large = "GFX_portrait_SWE_per_albin_hansson" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { staunch_constitutionalist }
+		}
+	}
+}

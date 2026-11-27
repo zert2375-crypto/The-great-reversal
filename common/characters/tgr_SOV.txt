@@ -4,10 +4,22 @@
 ################################################################################
 
 characters = {
+	SOV_boris_yeltsin = {
+		name = SOV_boris_yeltsin
+		portraits = {
+			civilian = { large = "GFX_portrait_SOV_aleksandr_kerensky" }
+		}
+		country_leader = {
+			ideology = liberalism
+			expire = "2045.1.1.1"
+			traits = { staunch_constitutionalist }
+		}
+	}
+
 	SOV_alexei_menshikov = {
 		name = SOV_alexei_menshikov
 		portraits = {
-			civilian = { large = "GFX_portrait_SOV_vyacheslav_molotov" }
+			civilian = { large = "GFX_portrait_SOV_alexey_menshikov" }
 		}
 		country_leader = {
 			ideology = oligarchism
@@ -19,8 +31,8 @@ characters = {
 	SOV_mikhail_chernenko = {
 		name = SOV_mikhail_chernenko
 		portraits = {
-			civilian = { large = "GFX_portrait_SOV_georgy_zhukov" }
-			army = { large = "GFX_portrait_SOV_georgy_zhukov" }
+			civilian = { large = "GFX_portrait_SOV_mikhail_chernenko" }
+			army = { large = "GFX_portrait_SOV_mikhail_chernenko" }
 		}
 		country_leader = {
 			ideology = fascism_ideology

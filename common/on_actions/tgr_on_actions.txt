@@ -10,6 +10,138 @@ on_actions = {
 			ARG = {
 				news_event = { id = tgr_news.10 days = 2 }
 			}
+
+			# === Канонические лидеры средних и малых держав (старт 2000 года) ===
+			# Рекрутируем и повышаем только для закладки 2000 года,
+			# чтобы не затрагивать ванильные старты 1936 и 1939.
+			if = {
+				limit = { date > 1999.1.1 }
+
+				# === Принудительно выдаём модовые древа фокусов ===
+				# Ванильные древа FRA/SOV/JAP имеют тот же или больший вес,
+				# поэтому одного блока country в focus_tree недостаточно.
+				if = {
+					limit = { country_exists = ARG }
+					ARG = { load_focus_tree = { tree = tgr_argentina_focus keep_completed = yes } }
+				}
+				if = {
+					limit = { country_exists = ENG }
+					ENG = { load_focus_tree = { tree = tgr_uk_focus keep_completed = yes } }
+				}
+				if = {
+					limit = { country_exists = FRA }
+					FRA = { load_focus_tree = { tree = tgr_france_focus keep_completed = yes } }
+				}
+				if = {
+					limit = { country_exists = GER }
+					GER = { load_focus_tree = { tree = tgr_germany_focus keep_completed = yes } }
+				}
+				if = {
+					limit = { country_exists = ITA }
+					ITA = { load_focus_tree = { tree = tgr_italy_focus keep_completed = yes } }
+				}
+				if = {
+					limit = { country_exists = SOV }
+					SOV = { load_focus_tree = { tree = tgr_russia_focus keep_completed = yes } }
+				}
+				if = {
+					limit = { country_exists = JAP }
+					JAP = { load_focus_tree = { tree = tgr_antarda_focus keep_completed = yes } }
+				}
+				if = {
+					limit = { country_exists = SAG }
+					SAG = { load_focus_tree = { tree = tgr_sag_focus keep_completed = yes } }
+				}
+
+				if = {
+					limit = { country_exists = POR }
+					POR = {
+						recruit_character = POR_joao_ferreira_da_silva
+						promote_character = POR_joao_ferreira_da_silva
+					}
+				}
+				if = {
+					limit = { country_exists = HUN }
+					HUN = {
+						recruit_character = HUN_gabor_nagy
+						promote_character = HUN_gabor_nagy
+					}
+				}
+				if = {
+					limit = { country_exists = CZE }
+					CZE = {
+						recruit_character = CZE_tomash_novak
+						promote_character = CZE_tomash_novak
+					}
+				}
+				if = {
+					limit = { country_exists = SLO }
+					SLO = {
+						recruit_character = SLO_marek_kral
+						promote_character = SLO_marek_kral
+					}
+				}
+				if = {
+					limit = { country_exists = HOL }
+					HOL = {
+						recruit_character = HOL_willem_van_der_berg
+						promote_character = HOL_willem_van_der_berg
+					}
+				}
+				if = {
+					limit = { country_exists = BEL }
+					BEL = {
+						recruit_character = BEL_luc_devaux
+						promote_character = BEL_luc_devaux
+					}
+				}
+				if = {
+					limit = { country_exists = LUX }
+					LUX = {
+						recruit_character = LUX_jean_paul_kirsch
+						promote_character = LUX_jean_paul_kirsch
+					}
+				}
+				if = {
+					limit = { country_exists = CHI }
+					CHI = {
+						recruit_character = CHI_chen_weiming
+						promote_character = CHI_chen_weiming
+					}
+				}
+				if = {
+					limit = { country_exists = KOR }
+					KOR = {
+						recruit_character = KOR_park_song_hoo
+						promote_character = KOR_park_song_hoo
+					}
+				}
+				# Тега SCA (Скандинавия) в 1.16.10 нет, поэтому председатель
+				# Скандинавского оборонительного совета закрепляется за Швецией.
+				if = {
+					limit = { country_exists = SWE }
+					SWE = {
+						recruit_character = SCA_sven_lindqvist
+						promote_character = SCA_sven_lindqvist
+					}
+				}
+				if = {
+					limit = { country_exists = SPR }
+					SPR = {
+						recruit_character = SPA_rafael_morales
+						promote_character = SPA_rafael_morales
+					}
+				}
+				else = {
+					if = {
+						limit = { country_exists = SPA }
+						SPA = {
+							recruit_character = SPA_rafael_morales
+							promote_character = SPA_rafael_morales
+						}
+					}
+				}
+			}
 		}
 	}
 }

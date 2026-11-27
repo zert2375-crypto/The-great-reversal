@@ -16,11 +16,23 @@ characters = {
 		}
 	}
 
+	FRA_marc_delacroix = {
+		name = FRA_marc_delacroix
+		portraits = {
+			civilian = { large = "GFX_portrait_FRA_paul_reynaud" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { staunch_constitutionalist }
+		}
+	}
+
 	FRA_gaspar_primo = {
 		name = FRA_gaspar_primo
 		portraits = {
-			civilian = { large = "GFX_portrait_FRA_philippe_petain" }
-			army = { large = "GFX_portrait_FRA_philippe_petain" }
+			civilian = { large = "GFX_portrait_FRA_gaspar_primo" }
+			army = { large = "GFX_portrait_FRA_gaspar_primo" }
 		}
 		country_leader = {
 			ideology = despotism

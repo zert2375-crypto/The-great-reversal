@@ -4,13 +4,13 @@
 ################################################################################
 
 characters = {
-	ITA_marco_conti = {
-		name = ITA_marco_conti
+	ITA_lorenzo_conti = {
+		name = ITA_lorenzo_conti
 		portraits = {
-			civilian = { large = "GFX_portrait_ITA_ferruccio_parri" }
+			civilian = { large = "GFX_portrait_ITA_lorenzo_conti" }
 		}
 		country_leader = {
-			ideology = liberalism
+			ideology = conservatism
 			expire = "2045.1.1.1"
 			traits = { silent_workhorse }
 		}

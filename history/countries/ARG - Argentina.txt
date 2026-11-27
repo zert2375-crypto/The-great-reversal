@@ -27,7 +27,7 @@ add_ideas = {
 	tgr_arg_books_of_akt
 }
 
-recruit_character = ARG_democratic_president
+recruit_character = ARG_lucas_marchetti
 recruit_character = ARG_akt_de_ruso
 recruit_character = ARG_celest_de_kuzo
 recruit_character = ARG_rekt_de_avellenyo

@@ -1,0 +1,18 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for CZE (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	CZE_tomash_novak = {
+		name = CZE_tomash_novak
+		portraits = {
+			civilian = { large = "GFX_portrait_CZE_tomash_novak" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { staunch_constitutionalist }
+		}
+	}
+}

@@ -25,7 +25,7 @@ add_ideas = {
 	tgr_eu_bloc_charter
 }
 
-recruit_character = ITA_marco_conti
+recruit_character = ITA_lorenzo_conti
 
 set_politics = {
 	ruling_party = democratic

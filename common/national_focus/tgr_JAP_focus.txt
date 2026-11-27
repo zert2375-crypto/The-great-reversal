@@ -10,7 +10,8 @@ focus_tree = {
 	country = {
 		factor = 0
 		modifier = {
-			add = 10
+			# Ванильное древо Японии даёт 20 — модовое должно быть выше
+			add = 100
 			tag = JAP
 		}
 	}

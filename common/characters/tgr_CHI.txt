@@ -1,0 +1,18 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for CHI (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	CHI_chen_weiming = {
+		name = CHI_chen_weiming
+		portraits = {
+			civilian = { large = "GFX_portrait_CHI_chen_weiming" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { silent_workhorse }
+		}
+	}
+}

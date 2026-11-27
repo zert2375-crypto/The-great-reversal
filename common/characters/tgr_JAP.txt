@@ -7,7 +7,7 @@ characters = {
 	JAP_crisis_cabinet = {
 		name = JAP_crisis_cabinet
 		portraits = {
-			civilian = { large = "GFX_portrait_JAP_fumimaro_konoe" }
+			civilian = { large = "GFX_portrait_JAP_naruhiko_higashikuni" }
 		}
 		country_leader = {
 			ideology = conservatism
@@ -19,8 +19,8 @@ characters = {
 	JAP_kenji_takahashi = {
 		name = JAP_kenji_takahashi
 		portraits = {
-			civilian = { large = "GFX_portrait_JAP_hideki_tojo" }
-			army = { large = "GFX_portrait_JAP_hideki_tojo" }
+			civilian = { large = "GFX_portrait_JAP_kuniaki_koiso" }
+			army = { large = "GFX_portrait_JAP_kuniaki_koiso" }
 		}
 		country_leader = {
 			ideology = rexism
@@ -33,6 +33,18 @@ characters = {
 			defense_skill = 3
 			planning_skill = 5
 			logistics_skill = 3
+		}
+	}
+
+	JAP_council_of_antarda = {
+		name = JAP_council_of_antarda
+		portraits = {
+			civilian = { large = "GFX_portrait_JAP_council_of_antarda" }
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "2045.1.1.1"
+			traits = { popular_figurehead }
 		}
 	}
 
@@ -54,7 +66,7 @@ characters = {
 	JAP_ren_nakamura = {
 		name = JAP_ren_nakamura
 		portraits = {
-			civilian = { large = "GFX_portrait_JAP_mitsumasa_yonai" }
+			civilian = { large = "GFX_portrait_JAP_zengo_yoshida" }
 		}
 		country_leader = {
 			ideology = liberalism

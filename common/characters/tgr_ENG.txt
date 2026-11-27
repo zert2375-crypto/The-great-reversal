@@ -19,8 +19,8 @@ characters = {
 	ENG_nilon_armstrong = {
 		name = ENG_nilon_armstrong
 		portraits = {
-			civilian = { large = "GFX_portrait_ENG_oswald_mosley" }
-			army = { large = "GFX_portrait_ENG_oswald_mosley" }
+			civilian = { large = "GFX_portrait_ENG_nilon_armstrong" }
+			army = { large = "GFX_portrait_ENG_nilon_armstrong" }
 		}
 		country_leader = {
 			ideology = fascism_ideology

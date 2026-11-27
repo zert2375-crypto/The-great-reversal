@@ -1,0 +1,18 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for BEL (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	BEL_luc_devaux = {
+		name = BEL_luc_devaux
+		portraits = {
+			civilian = { large = "GFX_portrait_BEL_hubert_pierlot" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { silent_workhorse }
+		}
+	}
+}

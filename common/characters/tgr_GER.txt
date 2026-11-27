@@ -4,15 +4,27 @@
 ################################################################################
 
 characters = {
-	GER_klaus_weber = {
-		name = GER_klaus_weber
+	GER_heinrich_von_berg = {
+		name = GER_heinrich_von_berg
 		portraits = {
-			civilian = { large = "GFX_portrait_GER_konrad_adenauer" }
+			civilian = { large = "GFX_portrait_GER_heinrich_von_berg" }
 		}
 		country_leader = {
 			ideology = conservatism
 			expire = "2045.1.1.1"
-			traits = { staunch_constitutionalist }
+			traits = { staunch_constitutionalist smooth_talking_charmer }
+		}
+	}
+
+	GER_karl_weiss = {
+		name = GER_karl_weiss
+		portraits = {
+			civilian = { large = "GFX_portrait_GER_albert_speer" }
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "2045.1.1.1"
+			traits = { backroom_backstabber }
 		}
 	}
 }

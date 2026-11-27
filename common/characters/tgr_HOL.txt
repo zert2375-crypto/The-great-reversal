@@ -1,0 +1,18 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for HOL / the Benelux (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	HOL_willem_van_der_berg = {
+		name = HOL_willem_van_der_berg
+		portraits = {
+			civilian = { large = "GFX_portrait_BEN_willem_van_der_berg" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { smooth_talking_charmer }
+		}
+	}
+}

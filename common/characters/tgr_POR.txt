@@ -1,0 +1,18 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for POR (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	POR_joao_ferreira_da_silva = {
+		name = POR_joao_ferreira_da_silva
+		portraits = {
+			civilian = { large = "GFX_portrait_POR_joao_ferreira_da_silva" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { smooth_talking_charmer }
+		}
+	}
+}

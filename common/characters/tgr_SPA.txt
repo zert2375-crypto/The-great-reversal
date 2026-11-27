@@ -1,0 +1,18 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for SPA / SPR (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	SPA_rafael_morales = {
+		name = SPA_rafael_morales
+		portraits = {
+			civilian = { large = "GFX_portrait_SPA_rafael_morales" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { silent_workhorse }
+		}
+	}
+}

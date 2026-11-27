@@ -4,10 +4,10 @@
 ################################################################################
 
 characters = {
-	ARG_democratic_president = {
-		name = ARG_democratic_president
+	ARG_lucas_marchetti = {
+		name = ARG_lucas_marchetti
 		portraits = {
-			civilian = { large = "GFX_portrait_south_america_generic_leader_1" }
+			civilian = { large = "GFX_portrait_ARG_lucas_marchetti" }
 		}
 		country_leader = {
 			ideology = liberalism
@@ -19,7 +19,7 @@ characters = {
 	ARG_akt_de_ruso = {
 		name = ARG_akt_de_ruso
 		portraits = {
-			civilian = { large = "GFX_portrait_ARG_agustin_pedro_justo" }
+			civilian = { large = "GFX_portrait_ARG_akt_de_ruso" }
 		}
 		country_leader = {
 			ideology = rexism
@@ -31,8 +31,8 @@ characters = {
 	ARG_celest_de_kuzo = {
 		name = ARG_celest_de_kuzo
 		portraits = {
-			civilian = { large = "GFX_portrait_ARG_arturo_rawson" }
-			army = { large = "GFX_portrait_ARG_arturo_rawson" }
+			civilian = { large = "GFX_portrait_ARG_celeste_de_kuzo" }
+			army = { large = "GFX_portrait_ARG_celeste_de_kuzo" }
 		}
 		country_leader = {
 			ideology = despotism
@@ -51,7 +51,7 @@ characters = {
 	ARG_rekt_de_avellenyo = {
 		name = ARG_rekt_de_avellenyo
 		portraits = {
-			civilian = { large = "GFX_portrait_ARG_roberto_maria_ortiz" }
+			civilian = { large = "GFX_portrait_ARG_rekt_de_avelleno" }
 		}
 		country_leader = {
 			ideology = conservatism
@@ -63,8 +63,8 @@ characters = {
 	ARG_mateo_del_sur = {
 		name = ARG_mateo_del_sur
 		portraits = {
-			civilian = { large = "GFX_portrait_south_america_generic_land_3" }
-			army = { large = "GFX_portrait_south_america_generic_land_3" }
+			civilian = { large = "GFX_portrait_south_america_generic_leader_1" }
+			army = { large = "GFX_portrait_south_america_generic_leader_1" }
 		}
 		corps_commander = {
 			skill = 4

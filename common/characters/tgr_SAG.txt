@@ -7,7 +7,7 @@ characters = {
 	SAG_carlos_mendoza = {
 		name = SAG_carlos_mendoza
 		portraits = {
-			civilian = { large = "GFX_portrait_south_america_generic_leader_2" }
+			civilian = { large = "GFX_portrait_BRA_getulio_vargas" }
 		}
 		country_leader = {
 			ideology = oligarchism
@@ -19,8 +19,8 @@ characters = {
 	SAG_luis_varona = {
 		name = SAG_luis_varona
 		portraits = {
-			civilian = { large = "GFX_portrait_south_america_generic_land_4" }
-			army = { large = "GFX_portrait_south_america_generic_land_4" }
+			civilian = { large = "GFX_portrait_BRA_eurico_gaspar_dutra" }
+			army = { large = "GFX_portrait_BRA_eurico_gaspar_dutra" }
 		}
 		corps_commander = {
 			skill = 3

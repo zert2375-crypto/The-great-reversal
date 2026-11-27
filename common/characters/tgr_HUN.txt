@@ -1,0 +1,18 @@
+################################################################################
+# THE GREAT REVERSAL: A WORLD WITHOUT MASTERS (1989-2040)
+# Characters for HUN (HoI4 1.16.10 system)
+################################################################################
+
+characters = {
+	HUN_gabor_nagy = {
+		name = HUN_gabor_nagy
+		portraits = {
+			civilian = { large = "GFX_portrait_HUN_gabor_nagy" }
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "2045.1.1.1"
+			traits = { silent_workhorse }
+		}
+	}
+}
